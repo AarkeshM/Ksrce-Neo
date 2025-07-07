@@ -1,44 +1,155 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
-import logo from '../assets/ksrce-neo-logo.png';
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Link, useLocation } from "react-router-dom";
+import "../styles/NavStyles.css";
 
-export default function Navbar() {
-  const [open, setOpen] = useState(false);
+const Header = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const location = useLocation();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const links = [
+    { name: "Home", path: "/" },
+    { name: "About", path: "/about" },
+    { name: "Domains", path: "/domain"},
+    { name: "Programs", path: "/programs" },
+    { name: "StartUps", path: "/startups" },
+    { name: "GetInvolved", path: "/getinvolved" },
+  ];
+
+  const navVariants = {
+    hidden: { y: -30, opacity: 0 },
+    visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
+  };
+
+  const mobileNavVariants = {
+    hidden: { opacity: 0, scale: 0.95, y: -20 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 120, damping: 15 },
+    },
+    exit: {
+      opacity: 0,
+      scale: 0.95,
+      y: -20,
+      transition: { duration: 0.3 },
+    },
+  };
 
   return (
-    <nav className="bg-gradient-to-r from-white via-purple-500 to-indigo-500 text-black fixed top-0 left-0 right-0 bg-white shadow z-50">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-2">
-        <div className="flex items-center space-x-3">
-          <img src={logo} alt="KSRCE NEO" className="w-16 h-16 rounded-full border border-transparent" />
-          <span className="text-xl font-bold tracking-wider">KSRCE NEO</span>
-        </div>
-        <div className="md:hidden">
-          <button onClick={() => setOpen(!open)}>
-            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+    <motion.header
+      initial="hidden"
+      animate="visible"
+      variants={navVariants}
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? " backdrop-blur-md shadow-lg text-white"
+          : "bg-transparent text-white"
+      }`}
+      
+    >
+      <div className="px-4 sm:px-6 py-3 flex items-center justify-between max-w-7xl mx-auto">
+        {/* Logo */}
+        <motion.div
+          whileHover={{ scale: 1.08, rotate: -2 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <Link to="/">
+            <h1 className="text-lg sm:text-2xl font-extrabold tracking-wider -mr-32 -ml-20">
+              KSRCE <span className="text-blue-300">NEO</span>
+            </h1>
+          </Link>
+        </motion.div>
+
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex gap-6 text-sm">
+          {links.map((link, index) => (
+            <motion.div
+              key={link.name}
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.05 }}
+            >
+              <Link
+                to={link.path}
+                className={`animated-link relative ${
+                  location.pathname === link.path ? "text-blue-400 glow" : ""
+                }`}
+              >
+                {link.name}
+              </Link>
+            </motion.div>
+          ))}
+        </nav>
+
+        {/* Apply Now (Desktop) */}
+        <motion.div whileHover={{ scale: 1.1 }} className="hidden md:block">
+          <button className="bg-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-700 transition">
+            Apply Now
           </button>
-        </div>
-        <div className="hidden md:flex space-x-6 text-sm font-medium">
-          <Link to="/" className="hover:text-yellow-300">Home</Link>
-          <Link to="/about" className="hover:text-yellow-300">About</Link>
-          <Link to='/programs' className="hover:text-yellow-300">Program</Link>
-          <Link to="/services" className="hover:text-yellow-300">Services</Link>
-          <Link to="/startups" className="hover:text-yellow-300">Startups</Link>
-          <Link to="/domains" className="hover:text-yellow-300">Domains</Link>
-          <Link to="/contact" className="hover:text-yellow-300">Contact</Link>
-        </div>
-        <Link to="/apply" className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Apply Now</Link>
+        </motion.div>
+
+        {/* Mobile Menu Button */}
+        <motion.button
+          whileTap={{ scale: 0.9 }}
+          className="md:hidden text-white text-2xl focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle Menu"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </motion.button>
       </div>
-      {open && (
-        <div className="md:hidden px-4 pb-4 space-y-2 bg-blue-950">
-          <Link to="/" className="block" onClick={() => setOpen(false)}>Home</Link>
-          <Link to="/about" className="block" onClick={() => setOpen(false)}>About</Link>
-          <Link to="/services" className="block" onClick={() => setOpen(false)}>Services</Link>
-          <Link to="/support" className="block" onClick={() => setOpen(false)}>Support</Link>
-          <Link to="/domains" className="block" onClick={() => setOpen(false)}>Domains</Link>
-          <Link to="/contact" className="block" onClick={() => setOpen(false)}>Contact</Link>
-        </div>
-      )}
-    </nav>
+
+      {/* Mobile Nav */}
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.nav
+            variants={mobileNavVariants}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="md:hidden bg-blue-950/95 backdrop-blur px-6 py-4 space-y-2 shadow-inner"
+          >
+            {links.map((link) => (
+              <motion.div
+                key={link.name}
+                whileHover={{ scale: 1.03, x: 5 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <Link
+                  to={link.path}
+                  className={`block text-sm py-1 ${
+                    location.pathname === link.path ? "text-blue-300 glow" : ""
+                  }`}
+                  onClick={() => setMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              </motion.div>
+            ))}
+
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              className=" bg-blue-600 w-full text-white py-2 rounded-full hover:bg-blue-700 shadow"
+            >
+              Apply Now
+            </motion.button>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
-}
+};
+
+export default Header;

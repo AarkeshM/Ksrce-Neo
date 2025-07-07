@@ -1,0 +1,38 @@
+/* NavStyles.css */
+nav {
+  filter: drop-shadow(0.25rem 0.25rem 0.5rem #0005);
+  width: 100%;
+  max-width: 14rem;
+}
+
+@media (prefers-reduced-motion) {
+  nav *,
+  .animated-link {
+    transition-duration: 0s !important;
+    animation-duration: 0s !important;
+  }
+}
+
+.animated-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.animated-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #93c5fd; /* blue-300 */
+  transition: width 0.3s ease;
+}
+
+.animated-link:hover::after {
+  width: 100%;
+}
+
+.glow {
+  text-shadow: 0 0 8px #93c5fd;
+}
