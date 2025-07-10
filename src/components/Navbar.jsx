@@ -66,8 +66,8 @@ const Header = () => {
           transition={{ type: "spring", stiffness: 300 }}
         >
           <Link to="/">
-            <h1 className="text-lg sm:text-2xl font-extrabold tracking-wider -mr-32 -ml-20">
-              KSRCE <span className="text-blue-300">NEO</span>
+            <h1 className="text-lg sm:text-2xl font-extrabold text-orange-400 tracking-wider">
+              KSRCE <span className="text-indigo-800">NEO</span>
             </h1>
           </Link>
         </motion.div>
@@ -95,7 +95,7 @@ const Header = () => {
 
         {/* Apply Now (Desktop) */}
         <motion.div whileHover={{ scale: 1.1 }} className="hidden md:block">
-          <button className="bg-blue-600 px-4 py-2 rounded-full shadow hover:bg-blue-700 transition">
+          <button className="bg-indigo-600 px-4 py-2 rounded-full shadow hover:bg-sky-700 transition">
             Apply Now
           </button>
         </motion.div>
@@ -119,7 +119,7 @@ const Header = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="md:hidden bg-blue-950/95 backdrop-blur px-6 py-4 space-y-2 shadow-inner"
+            className="md:hidden text-blue-950 font-ultrabold bg-transparent backdrop-blur px-6 py-4 space-y-2 shadow-inner"
           >
             {links.map((link) => (
               <motion.div
@@ -130,7 +130,7 @@ const Header = () => {
                 <Link
                   to={link.path}
                   className={`block text-sm py-1 ${
-                    location.pathname === link.path ? "text-blue-300 glow" : ""
+                    location.pathname === link.path ? "text-blue-700 glow" : ""
                   }`}
                   onClick={() => setMenuOpen(false)}
                 >
@@ -141,7 +141,7 @@ const Header = () => {
 
             <motion.button
               whileHover={{ scale: 1.05 }}
-              className=" bg-blue-600 w-full text-white py-2 rounded-full hover:bg-blue-700 shadow"
+              className=" bg-sky-600 w-full text-white py-2 rounded-full hover:bg-sky-700 shadow"
             >
               Apply Now
             </motion.button>

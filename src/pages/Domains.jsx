@@ -22,7 +22,7 @@ export default function Domains() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 text-center py-16 px-4 ">
+    <div className="bg-gradient-to-br from-sky-700 via-sky-600 to-sky-700 text-center py-16 px-4 ">
       <h1 className="text-3xl sm:text-4xl font-bold text-blue-100 mb-4">
         Domains
       </h1>

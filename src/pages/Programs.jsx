@@ -29,7 +29,7 @@ export default function Programs() {
   return (
     <>
 
-      <div className="bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 min-h-screen py-16 px-4 text-center text-blue-100">
+      <div className="bg-gradient-to-br from-sky-700 via-sky-600 to-sky-700 min-h-screen py-16 px-4 text-center text-blue-100">
         <h1 className="text-4xl sm:text-5xl font-bold mb-6 text-blue-100">
           Programs & Events
         </h1>
@@ -83,18 +83,17 @@ export default function Programs() {
               </h3>
               <p className="text-sm text-blue-300">{event.desc}</p>
               <button
-                className="
-    mt-2 inline-flex items-center justify-center
+                className=" mt-2 inline-flex items-center justify-center
     text-xs sm:text-sm font-medium
     text-white
-    bg-gradient-to-r from-blue-600 to-blue-700
+    bg-gradient-to-r from-blue-600 to-indigo-700
     hover:from-blue-700 hover:to-blue-800
     focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400
     rounded-full px-4 py-2
     shadow-md hover:shadow-lg
     transform hover:-translate-y-0.5 active:scale-95
-    transition-all duration-300 ease-in-out
-  "
+    transition-all duration-300 ease-in-out"
+
               >
                 View Full Details
                 <svg

@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function GetInvolved() {
   return (
-    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 text-white">
+    <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-sky-700 via-sky-600 to-sky-700 text-white">
       <h1 className="text-4xl sm:text-5xl font-extrabold text-center text-sky-300 mb-12">
         Get Involved
       </h1>

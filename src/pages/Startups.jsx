@@ -53,7 +53,7 @@ const currentStartups = [
 
 export default function Startups() {
   return (
-    <div className="bg-gradient-to-b from-blue-950 via-blue-900 to-blue-950 min-h-screen text-white">
+    <div className="bg-gradient-to-b from-sky-700 via-sky-600 to-sky-700 min-h-screen text-white">
       <header className="text-4xl font-extrabold text-center py-16 tracking-wider text-blue-100">
         🚀 Startups
       </header>

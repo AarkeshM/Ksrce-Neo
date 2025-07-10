@@ -39,7 +39,7 @@ const AboutUs = () => {
   return (
     <section
       id="about"
-      className="py-16 px-6 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-950 text-white"
+      className="py-16 px-6 bg-gradient-to-br from-sky-700 via-sky-600 to-sky-700 text-white"
     >
       <div className="max-w-5xl mx-auto">
         <motion.h2
@@ -47,7 +47,7 @@ const AboutUs = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-4xl font-bold mb-8 text-center drop-shadow-lg"
+          className="text-4xl font-bold text-blue-200 mb-8 text-center drop-shadow-lg"
         >
           About Us
         </motion.h2>
