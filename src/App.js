@@ -8,6 +8,7 @@ import Domains from "./pages/Domains";
 import Programs from "./pages/Programs";
 import Startups from "./pages/Startups";
 import GetInvolved from "./pages/GetInvolved";
+import Facilities from "./pages/Facilities";
 
 
 const App = () => {
@@ -15,12 +16,8 @@ const App = () => {
     <>
     
     <Router>
-      
 
-        {/* 🔷 Header */}
         <Header />
-
-        {/* 🔷 Main Content */}
         <main>
           <Routes>
             <Route path="/" element={<Hero />} />
@@ -29,10 +26,9 @@ const App = () => {
             <Route path='/programs' element={<Programs />} />
             <Route path="/startups" element={<Startups />} />
             <Route path="/getinvolved" element={<GetInvolved />} />
+            <Route path="/facilites" element={<Facilities />} />
           </Routes>
         </main>
-
-        {/* 🔷 Footer */}
         <Footer />
       
     </Router>

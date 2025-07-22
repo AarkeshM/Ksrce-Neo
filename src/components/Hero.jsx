@@ -4,6 +4,7 @@ import { Typewriter } from "react-simple-typewriter";
 import heroMockup1 from "../assets/hero.jpg";
 import heroMockup2 from "../assets/hero2.jpg";
 import '../index.css';
+import { Link } from "react-router-dom";
 
 const images = [heroMockup1, heroMockup2];
 
@@ -42,24 +43,49 @@ const Hero = () => {
   const faqs = [
     {
       question: "Who can apply for incubation?",
-      answer:
-        "Students, faculty, alumni, and external entrepreneurs with innovative ideas are welcome to apply.",
+      answer: [
+        "   KSRCE NEO Incubation Centre welcomes:",
+        "•	Students (from any department with innovative ideas)",
+        "•	Faculty members with research-driven or product-based concepts",
+        "•	Startups & Entrepreneurs from inside and outside KSRCE",
+        "•	Alumni with a strong vision to build impactful ventures",
+        "•	Research teams seeking to commercialize innovations",
+        "•	If you have a solution-oriented idea, we're here to support your journey from concept to company!"
+      ]
     },
     {
       question: "What facilities are available?",
-      answer:
-        "We provide co-working space, high-speed internet, meeting rooms, labs, and other necessary infrastructure.",
+      answer: [
+        "We provide a vibrant, innovation-driven ecosystem including",
+        "•	Co-working space with high-speed internet",
+        "•	Prototype development lab with tools & equipment",
+        "•	Mentoring & guidance from industry experts and academicians",
+        "•	IPR & patent filing support",
+        "•	Workshops & bootcamps on business, tech, and soft skills",
+        "•	Networking opportunities with investors, entrepreneurs, and mentors",
+        "•	Product testing & validation support",
+        "•	Access to funding and grants"
+      ]
     },
     {
       question: "How do we access funding support?",
-      answer:
-        "We help connect startups with angel investors, VCs, and government grants based on eligibility.",
+      answer: [
+        "•	KSRCE NEO Incubation Centre helps startups in multiple ways:",
+        "•	Connect with angel investors, venture capitalists, and government funding agencies",
+        "•	Guidance to apply for grants and schemes (MSME, DST, EDII, Start-up India, etc.)",
+        "•	Pitching opportunities at demo days and startup events",
+        "•	Mentorship on preparing business plans, financial projections, and investor pitches",
+        "•	We walk with you at every step of your funding journey."
+      ]
     },
     {
       question: "Is the space free for students?",
-      answer:
-        "Yes, KSRCE students get access to workspace and basic facilities free of cost during their incubation period.",
-    },
+      answer: [
+        "Yes!",
+        "At KSRCE NEO, incubation space is offered free of cost for students with eligible and impactful ideas.",
+        "We believe in nurturing student innovators by removing financial barriers and empowering them to ideate, build, and launch with full institutional support."
+      ]
+    }
   ];
 
   const itemVariants = {
@@ -115,7 +141,13 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className="mt-6 bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-100 shadow-md"
           >
-            Explore Programs
+            <Link
+              to="/facilities"
+              className="flex items-center gap-2 text-blue-900"
+            >
+              <span>Explore Facilities</span>
+              <span>➟</span>
+            </Link>
           </motion.button>
         </div>
 
@@ -192,11 +224,11 @@ const Hero = () => {
                 className="shadow-md bg-white/90 border border-blue-200
         transition hover:shadow-lg hover:border-blue-400
         w-full sm:min-w-[600px] sm:max-w-[600px] mx-auto rounded-[20px]"
-                
+
               >
                 <button
                   onClick={() => toggleFAQ(i)}
-                  className="w-full flex justify-between items-center text-left px-5 py-4 text-blue-800 font-medium focus:outline-none"
+                  className="w-full flex justify-between items-right text-left px-5 py-4 text-blue-800 font-medium focus:outline-none"
                 >
                   <span className="text-center md:text-lg">{faq.question}</span>
 
@@ -212,14 +244,21 @@ const Hero = () => {
 
                 <AnimatePresence>
                   {openIndex === i && (
+
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="px-5 pb-4 text-blue-700 text-sm w-full"
+                      className="px-5 pb-4 text-blue-700 text-left text-sm w-full space-y-1"
                     >
-                      {faq.answer}
+                      {
+                        Array.isArray(faq.answer)
+                          ? faq.answer.map((line, idx) => (
+                            <p key={idx}>{line}</p>
+                          ))
+                          : <p>{faq.answer}</p>
+                      }
                     </motion.div>
                   )}
                 </AnimatePresence>

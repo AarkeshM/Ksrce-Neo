@@ -20,7 +20,7 @@ const Footer = () => {
               href="mailto:info@ksrce.edu.in"
               className="hover:text-blue-300 transition-colors"
             >
-              info@ksrce.edu.in
+              ksrceneo@gmail.com
             </a>
           </p>
 
@@ -29,7 +29,7 @@ const Footer = () => {
               href="tel:+919XXXXXXXXX"
               className="hover:text-blue-300 transition-colors"
             >
-              +91-XXXXXXXXXX
+              +91-8220244951
             </a>
           </p>
 
