@@ -6,6 +6,7 @@ import heroMockup2 from "../assets/hero2.jpg";
 import '../index.css';
 import { Link } from "react-router-dom";
 
+
 const images = [heroMockup1, heroMockup2];
 
 const Hero = () => {
@@ -142,7 +143,7 @@ const Hero = () => {
             className="mt-6 bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-100 shadow-md"
           >
             <Link
-              to="/facilities"
+              to="/facilites"
               className="flex items-center gap-2 text-blue-900"
             >
               <span>Explore Facilities</span>

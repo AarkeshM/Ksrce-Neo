@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/NavStyles.css";
+import logo from "../photos/KSRCE NEO logo.jpg";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -20,7 +21,7 @@ const Header = () => {
   const links = [
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
-    { name: "Domains", path: "/domain"},
+    { name: "Domains", path: "/domain" },
     { name: "Programs", path: "/programs" },
     { name: "StartUps", path: "/startups" },
     { name: "GetInvolved", path: "/getinvolved" },
@@ -52,25 +53,28 @@ const Header = () => {
       initial="hidden"
       animate="visible"
       variants={navVariants}
-      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${isScrolled
           ? " backdrop-blur-md shadow-lg text-white"
           : "bg-transparent text-white"
-      }`}
-      
+        }`}
+
     >
       <div className="px-4 sm:px-6 py-3 flex items-center justify-between max-w-7xl mx-auto">
+        {/* Logo */}
         {/* Logo */}
         <motion.div
           whileHover={{ scale: 1.08, rotate: -2 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
           <Link to="/">
-            <h1 className="text-lg sm:text-2xl font-extrabold text-orange-400 tracking-wider">
-              KSRCE <span className="text-indigo-800">NEO</span>
-            </h1>
+            <img
+              src= {logo}
+              alt="KSRCE NEO Logo"
+              className="h-10 sm:h-14 object-contain"
+            />
           </Link>
         </motion.div>
+
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex gap-6 text-sm">
@@ -83,9 +87,8 @@ const Header = () => {
             >
               <Link
                 to={link.path}
-                className={`animated-link relative ${
-                  location.pathname === link.path ? "text-blue-400 glow" : ""
-                }`}
+                className={`animated-link relative ${location.pathname === link.path ? "text-blue-400 glow" : ""
+                  }`}
               >
                 {link.name}
               </Link>
@@ -129,9 +132,8 @@ const Header = () => {
               >
                 <Link
                   to={link.path}
-                  className={`block text-sm py-1 ${
-                    location.pathname === link.path ? "text-blue-700 glow" : ""
-                  }`}
+                  className={`block text-sm py-1 ${location.pathname === link.path ? "text-blue-700 glow" : ""
+                    }`}
                   onClick={() => setMenuOpen(false)}
                 >
                   {link.name}
