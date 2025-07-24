@@ -2,12 +2,16 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import heroMockup1 from "../assets/hero.jpg";
-import heroMockup2 from "../assets/hero2.jpg";
+import heroMockup3 from "../assets/hero3.jpg";
+import heroMockup4 from "../assets/hero4.jpg";
+import heroMockup5 from "../assets/hero5.jpg";
+import heroMockup6 from "../assets/hero6.jpg";
+import heroMockup7 from "../assets/hero7.jpg";
 import '../index.css';
 import { Link } from "react-router-dom";
 
 
-const images = [heroMockup1, heroMockup2];
+const images = [heroMockup1, heroMockup5,heroMockup4,heroMockup3, heroMockup6, heroMockup7];
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
@@ -163,7 +167,7 @@ const Hero = () => {
                 initial={{ opacity: 0, scale: 1.05 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 0.3 }}
                 className="w-full h-full object-cover"
               />
             </AnimatePresence>
