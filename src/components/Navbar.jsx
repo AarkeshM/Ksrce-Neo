@@ -95,15 +95,15 @@ const Header = () => {
             </motion.div>
           ))}
         </nav>
-
-        {/* Apply Now (Desktop) */}
+        
         <motion.div whileHover={{ scale: 1.1 }} className="hidden md:block">
+        <a href="https://forms.gle/W9v7f63gsJEsaDo27">
           <button className="bg-indigo-600 px-4 py-2 rounded-full shadow hover:bg-sky-700 transition">
             Apply Now
           </button>
+          </a>
         </motion.div>
 
-        {/* Mobile Menu Button */}
         <motion.button
           whileTap={{ scale: 0.9 }}
           className="md:hidden text-white text-2xl focus:outline-none"
@@ -114,7 +114,6 @@ const Header = () => {
         </motion.button>
       </div>
 
-      {/* Mobile Nav */}
       <AnimatePresence>
         {menuOpen && (
           <motion.nav
