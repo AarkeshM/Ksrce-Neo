@@ -107,12 +107,14 @@ export default function Startups() {
       </section>
 
       <div className="flex flex-wrap justify-center gap-4 mt-8 pb-12">
+      <a href="https://forms.gle/W9v7f63gsJEsaDo27">
         <button className="
           px-6 py-3 bg-gradient-to-r from-sky-500 to-blue-700 text-white font-semibold shadow-lg
           hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transform transition-all rounded-none
         ">
           Apply Now
         </button>
+        </a>
 
         <button className="
           px-6 py-3 bg-gradient-to-r from-blue-700 to-indigo-800 text-white font-semibold shadow-lg

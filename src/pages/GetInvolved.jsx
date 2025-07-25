@@ -18,6 +18,7 @@ export default function GetInvolved() {
             project collaborations, and participation in workshops and events. These opportunities
             provide hands-on experience, mentorship, and exposure to the startup ecosystem.
           </p>
+          <a href='https://forms.gle/miZPmmZxsLgjoHrJ7'>
           <button className="
             relative inline-block bg-gradient-to-r from-sky-500 to-blue-700 
             text-white font-semibold py-2 px-5 rounded-lg shadow 
@@ -26,6 +27,7 @@ export default function GetInvolved() {
           ">
             Explore Student Opportunities
           </button>
+          </a>
         </div>
 
         {/* Mentors */}
@@ -38,6 +40,7 @@ export default function GetInvolved() {
             guiding startups and sharing their knowledge. Mentors play a crucial role in shaping
             the next generation of entrepreneurs.
           </p>
+          <a href='https://forms.gle/Wc7M6TbAMW5C3JjHA'>
           <button className="
             relative inline-block bg-gradient-to-r from-sky-500 to-blue-700 
             text-white font-semibold py-2 px-5 rounded-lg shadow 
@@ -46,6 +49,7 @@ export default function GetInvolved() {
           ">
             Become a Mentor
           </button>
+          </a>
         </div>
 
         {/* Corporate Partners */}
@@ -58,6 +62,7 @@ export default function GetInvolved() {
             and engage with startups. Collaboration opportunities include sponsoring events, providing
             resources, and participating in joint projects.
           </p>
+          <a href='https://forms.gle/VBgGqVhkqPetoWqu8'>
           <button className="
             relative inline-block bg-gradient-to-r from-sky-500 to-blue-700 
             text-white font-semibold py-2 px-5 rounded-lg shadow 
@@ -66,6 +71,7 @@ export default function GetInvolved() {
           ">
             Explore Partnership Opportunities
           </button>
+          </a>
         </div>
       </div>
     </div>

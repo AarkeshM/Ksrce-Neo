@@ -141,12 +141,14 @@ const Header = () => {
               </motion.div>
             ))}
 
+            <a href="https://forms.gle/W9v7f63gsJEsaDo27">
             <motion.button
               whileHover={{ scale: 1.05 }}
               className=" bg-sky-600 w-full text-white py-2 rounded-full hover:bg-sky-700 shadow"
             >
               Apply Now
             </motion.button>
+            </a>
           </motion.nav>
         )}
       </AnimatePresence>

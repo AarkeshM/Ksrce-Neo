@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import heroMockup1 from "../assets/hero.jpg";
@@ -10,18 +10,27 @@ import heroMockup7 from "../assets/hero7.jpg";
 import '../index.css';
 import { Link } from "react-router-dom";
 
-
-const images = [heroMockup1, heroMockup5,heroMockup4,heroMockup3, heroMockup6, heroMockup7];
+const images = [
+  heroMockup1,
+  heroMockup5,
+  heroMockup4,
+  heroMockup3,
+  heroMockup6,
+  heroMockup7,
+];
 
 const Hero = () => {
   const [current, setCurrent] = useState(0);
   const [openIndex, setOpenIndex] = useState(null);
+  const [direction, setDirection] = useState(1);
+  const timer = useRef();
 
   useEffect(() => {
-    const interval = setInterval(() => {
+    timer.current = setInterval(() => {
+      setDirection(1);
       setCurrent((prev) => (prev + 1) % images.length);
     }, 5000);
-    return () => clearInterval(interval);
+    return () => clearInterval(timer.current);
   }, []);
 
   const highlights = [
@@ -50,47 +59,47 @@ const Hero = () => {
       question: "Who can apply for incubation?",
       answer: [
         "   KSRCE NEO Incubation Centre welcomes:",
-        "•	Students (from any department with innovative ideas)",
-        "•	Faculty members with research-driven or product-based concepts",
-        "•	Startups & Entrepreneurs from inside and outside KSRCE",
-        "•	Alumni with a strong vision to build impactful ventures",
-        "•	Research teams seeking to commercialize innovations",
-        "•	If you have a solution-oriented idea, we're here to support your journey from concept to company!"
-      ]
+        "•  Students (from any department with innovative ideas)",
+        "•  Faculty members with research-driven or product-based concepts",
+        "•  Startups & Entrepreneurs from inside and outside KSRCE",
+        "•  Alumni with a strong vision to build impactful ventures",
+        "•  Research teams seeking to commercialize innovations",
+        "•  If you have a solution-oriented idea, we're here to support your journey from concept to company!",
+      ],
     },
     {
       question: "What facilities are available?",
       answer: [
         "We provide a vibrant, innovation-driven ecosystem including",
-        "•	Co-working space with high-speed internet",
-        "•	Prototype development lab with tools & equipment",
-        "•	Mentoring & guidance from industry experts and academicians",
-        "•	IPR & patent filing support",
-        "•	Workshops & bootcamps on business, tech, and soft skills",
-        "•	Networking opportunities with investors, entrepreneurs, and mentors",
-        "•	Product testing & validation support",
-        "•	Access to funding and grants"
-      ]
+        "•  Co-working space with high-speed internet",
+        "•  Prototype development lab with tools & equipment",
+        "•  Mentoring & guidance from industry experts and academicians",
+        "•  IPR & patent filing support",
+        "•  Workshops & bootcamps on business, tech, and soft skills",
+        "•  Networking opportunities with investors, entrepreneurs, and mentors",
+        "•  Product testing & validation support",
+        "•  Access to funding and grants",
+      ],
     },
     {
       question: "How do we access funding support?",
       answer: [
-        "•	KSRCE NEO Incubation Centre helps startups in multiple ways:",
-        "•	Connect with angel investors, venture capitalists, and government funding agencies",
-        "•	Guidance to apply for grants and schemes (MSME, DST, EDII, Start-up India, etc.)",
-        "•	Pitching opportunities at demo days and startup events",
-        "•	Mentorship on preparing business plans, financial projections, and investor pitches",
-        "•	We walk with you at every step of your funding journey."
-      ]
+        "•  KSRCE NEO Incubation Centre helps startups in multiple ways:",
+        "•  Connect with angel investors, venture capitalists, and government funding agencies",
+        "•  Guidance to apply for grants and schemes (MSME, DST, EDII, Start-up India, etc.)",
+        "•  Pitching opportunities at demo days and startup events",
+        "•  Mentorship on preparing business plans, financial projections, and investor pitches",
+        "•  We walk with you at every step of your funding journey.",
+      ],
     },
     {
       question: "Is the space free for students?",
       answer: [
         "Yes!",
         "At KSRCE NEO, incubation space is offered free of cost for students with eligible and impactful ideas.",
-        "We believe in nurturing student innovators by removing financial barriers and empowering them to ideate, build, and launch with full institutional support."
-      ]
-    }
+        "We believe in nurturing student innovators by removing financial barriers and empowering them to ideate, build, and launch with full institutional support.",
+      ],
+    },
   ];
 
   const itemVariants = {
@@ -156,22 +165,44 @@ const Hero = () => {
           </motion.button>
         </div>
 
-        {/* Slideshow */}
-        <div className="mt-10 flex justify-center">
-          <div className="w-full max-w-[650px] sm:max-w-[600px] lg:max-w-[900px] aspect-video rounded-xl overflow-hidden shadow-2xl">
-            <AnimatePresence mode="wait">
-              <motion.img
-                key={current}
-                src={images[current]}
-                alt={`Hero Mockup ${current + 1}`}
-                initial={{ opacity: 0, scale: 1.05 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
-                className="w-full h-full object-cover"
-              />
-            </AnimatePresence>
-          </div>
+        {/* 3D Image Carousel with Controls */}
+        <div
+          className="w-full max-w-[650px] sm:max-w-[600px] lg:max-w-[900px] aspect-video rounded-xl overflow-hidden shadow-2xl flex items-center justify-center relative mt-8"
+          style={{ perspective: 1200 }}
+        >
+          <AnimatePresence mode="wait" initial={false}>
+            <motion.img
+              key={current}
+              src={images[current]}
+              initial={{
+                opacity: 0,
+                rotateY: direction === 1 ? 90 : -90,
+                rotateX: 20 * direction,
+                scale: 0.8,
+                z: -100,
+              }}
+              animate={{
+                opacity: 1,
+                rotateY: 0,
+                rotateX: 0,
+                scale: 1,
+                z: 0,
+              }}
+              exit={{
+                opacity: 0,
+                rotateY: direction === 1 ? -90 : 90,
+                rotateX: -20 * direction,
+                scale: 0.8,
+                z: -100,
+              }}
+              transition={{
+                duration: 0.8,
+                ease: [0.77, 0.2, 0.15, 1.01],
+              }}
+              className="w-full h-full object-cover rounded-xl"
+              style={{ backfaceVisibility: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,.25)" }}
+            />
+          </AnimatePresence>
         </div>
 
         {/* Highlights */}
@@ -217,7 +248,7 @@ const Hero = () => {
           </div>
         </div>
 
-
+        {/* FAQ Section */}
         <div className="flex flex-col items-center gap-6 mt-16 mb-8 px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
             FAQ
@@ -226,10 +257,7 @@ const Hero = () => {
             {faqs.map((faq, i) => (
               <motion.div
                 key={i}
-                className="shadow-md bg-white/90 border border-blue-200
-        transition hover:shadow-lg hover:border-blue-400
-        w-full sm:min-w-[600px] sm:max-w-[600px] mx-auto rounded-[20px]"
-
+                className="shadow-md bg-white/90 border border-blue-200 transition hover:shadow-lg hover:border-blue-400 w-full sm:min-w-[600px] sm:max-w-[600px] mx-auto rounded-[20px]"
               >
                 <button
                   onClick={() => toggleFAQ(i)}
@@ -249,7 +277,6 @@ const Hero = () => {
 
                 <AnimatePresence>
                   {openIndex === i && (
-
                     <motion.div
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: "auto" }}
@@ -257,12 +284,11 @@ const Hero = () => {
                       transition={{ duration: 0.3 }}
                       className="px-5 pb-4 text-blue-700 text-left text-sm w-full space-y-1"
                     >
-                      {
-                        Array.isArray(faq.answer)
-                          ? faq.answer.map((line, idx) => (
-                            <p key={idx}>{line}</p>
-                          ))
-                          : <p>{faq.answer}</p>
+                      {Array.isArray(faq.answer)
+                        ? faq.answer.map((line, idx) => (
+                          <p key={idx}>{line}</p>
+                        ))
+                        : <p>{faq.answer}</p>
                       }
                     </motion.div>
                   )}
