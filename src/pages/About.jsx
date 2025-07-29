@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { FaLinkedin } from "react-icons/fa";
-
+import venkatesan from "../photos/venkatesan.jpg"
 import lakshmi from "../photos/lakshmi.jpg";
 import murugesan from "../photos/murugesan.jpg";
 import pavithran from "../photos/pavithran.png";
@@ -168,7 +168,7 @@ const AboutUs = () => {
               className="bg-white/10 backdrop-blur-sm rounded-xl shadow-xl p-6 text-center hover:shadow-2xl transition w-52"
             >
               <img
-                src="/photos/venkatesan.jpg"
+                src={venkatesan}
                 alt="Dr. M. Venkatesan"
                 className="w-36 h-36 mx-auto mb-3 object-cover shadow-lg border-4 border-white"
               />
