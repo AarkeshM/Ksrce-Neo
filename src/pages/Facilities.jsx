@@ -2,7 +2,6 @@ import React from "react";
 import { motion } from "framer-motion";
 import fablab from "../photos/fab-lab.jpg";
 import incubation1 from "../photos/incubation space-1.jpg";
-import incubation2 from "../photos/incubation-space-2.jpg";
 import meeting from "../photos/meeting hall.jpg";
 import working from "../photos/co working space.jpg";
 
@@ -28,17 +27,6 @@ const facilities = [
       "Access to shared amenities and incubation support from KSCRE NEO"],
     seatings: 30,
     photo: incubation1,
-  },
-  {
-    name: "Incubation Space II",
-    description: "The 3-seater Individual Cabin at KSCRE NEO offers a private, professional workspace designed for focused productivity and small team collaboration.",
-    features: [
-      "Comfortable 3-person seating with ergonomic chairs and spacious tables",
-      "High-speed internet connectivity for seamless workflow",
-      "Ideal for startups, co-founders, or project-based teams needing privacy",
-      "Access to shared amenities and incubation support from KSCRE NEO"],
-    seatings: 30,
-    photo: incubation2,
   },
   {
     name: "Co-Working Space",

@@ -4,8 +4,8 @@ import { FaLinkedin } from "react-icons/fa";
 import venkatesan from "../photos/venkatesan.jpg"
 import lakshmi from "../photos/lakshmi.jpg";
 import murugesan from "../photos/murugesan.jpg";
-import pavithran from "../photos/pavithran.png";
-import harshini from "../photos/harshini.jpg";
+import pavithran from "../photos/pavithran.jpg";
+import harshini from "../photos/harshini.png";
 
 const coreValues = [
   { title: "Innovation", desc: "We champion creativity and encourage the exploration of novel ideas.", icon: "💡" },
