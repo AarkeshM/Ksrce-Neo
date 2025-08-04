@@ -20,7 +20,7 @@ const Footer = () => {
               href="mailto:info@ksrce.edu.in"
               className="hover:text-blue-300 transition-colors"
             >
-              ksrceneo@gmail.com
+              neo@ksrce.ac.in
             </a>
           </p>
 
@@ -34,7 +34,7 @@ const Footer = () => {
           </p>
 
           <p className="text-lg">
-            K.S.R. College of Engineering, Tiruchengode, Tamil Nadu
+            KSRCE Council For Innovation & Incubation, Tiruchengode, Tamil Nadu
           </p>
 
           <div className="border-t border-blue-600 mt-6 pt-4">

@@ -97,7 +97,7 @@ const Header = () => {
         </nav>
         
         <motion.div whileHover={{ scale: 1.1 }} className="hidden md:block">
-        <a href="https://forms.gle/W9v7f63gsJEsaDo27">
+        <a href="/getinvolved">
           <button className="bg-indigo-600 px-4 py-2 rounded-full shadow hover:bg-sky-700 transition">
             Apply Now
           </button>
@@ -140,7 +140,7 @@ const Header = () => {
               </motion.div>
             ))}
 
-            <a href="https://forms.gle/W9v7f63gsJEsaDo27">
+            <a href="/getinvolved">
             <motion.button
               whileHover={{ scale: 1.05 }}
               className=" bg-sky-600 w-full text-white py-2 rounded-full hover:bg-sky-700 shadow"

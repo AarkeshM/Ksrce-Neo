@@ -11,7 +11,7 @@ export default function GetInvolved() {
         {/* Students */}
         <div className="bg-blue-800/20 p-6 rounded-xl shadow hover:shadow-lg transition">
           <h2 className="text-2xl font-bold text-sky-300 mb-3">
-            For Students
+            For Student Innovators
           </h2>
           <p className="text-blue-100 mb-4 leading-relaxed">
             Students can engage with KSRCE NEO through various avenues, including internships,
@@ -19,28 +19,47 @@ export default function GetInvolved() {
             provide hands-on experience, mentorship, and exposure to the startup ecosystem.
           </p>
           <a href='https://forms.gle/miZPmmZxsLgjoHrJ7'>
-          <button className="
+            <button className="
             relative inline-block bg-gradient-to-r from-sky-500 to-blue-700 
             text-white font-semibold py-2 px-5 rounded-lg shadow 
             hover:shadow-xl hover:scale-105 transition transform
             before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-10 before:rounded-lg before:transition
           ">
-            Explore Student Opportunities
-          </button>
+              Explore Student Opportunities
+            </button>
           </a>
         </div>
 
-        {/* Mentors */}
         <div className="bg-blue-800/20 p-6 rounded-xl shadow hover:shadow-lg transition">
           <h2 className="text-2xl font-bold text-sky-300 mb-3">
-            For Mentors
+            For StartUps
           </h2>
           <p className="text-blue-100 mb-4 leading-relaxed">
-            Experienced professionals and industry experts can contribute to KSRCE NEO as mentors,
-            guiding startups and sharing their knowledge. Mentors play a crucial role in shaping
-            the next generation of entrepreneurs.
+            KSRCE NEO is the perfect launchpad for ambitious startups to bring their ideas to life.
+            Gain access to innovation labs, expert mentorship, networking opportunities, and the
+            resources you need to accelerate your business growth. Join us and turn your vision
+            into a successful venture.
           </p>
           <a href='https://forms.gle/Wc7M6TbAMW5C3JjHA'>
+            <button className="relative inline-block bg-gradient-to-r from-sky-500 to-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow 
+            hover:shadow-xl hover:scale-105 transition transform before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-10 before:rounded-lg before:transition"
+            >
+              Apply as a Startup
+            </button>
+          </a>
+        </div>
+
+      {/* Mentors */}
+      <div className="bg-blue-800/20 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 className="text-2xl font-bold text-sky-300 mb-3">
+          For Mentors
+        </h2>
+        <p className="text-blue-100 mb-4 leading-relaxed">
+          Experienced professionals and industry experts can contribute to KSRCE NEO as mentors,
+          guiding startups and sharing their knowledge. Mentors play a crucial role in shaping
+          the next generation of entrepreneurs.
+        </p>
+        <a href='https://forms.gle/Wc7M6TbAMW5C3JjHA'>
           <button className="
             relative inline-block bg-gradient-to-r from-sky-500 to-blue-700 
             text-white font-semibold py-2 px-5 rounded-lg shadow 
@@ -49,20 +68,20 @@ export default function GetInvolved() {
           ">
             Become a Mentor
           </button>
-          </a>
-        </div>
+        </a>
+      </div>
 
-        {/* Corporate Partners */}
-        <div className="bg-blue-800/20 p-6 rounded-xl shadow hover:shadow-lg transition">
-          <h2 className="text-2xl font-bold text-sky-300 mb-3">
-            For Corporate Partners
-          </h2>
-          <p className="text-blue-100 mb-4 leading-relaxed">
-            Corporations can partner with KSRCE NEO to foster innovation, access cutting-edge technologies,
-            and engage with startups. Collaboration opportunities include sponsoring events, providing
-            resources, and participating in joint projects.
-          </p>
-          <a href='https://forms.gle/VBgGqVhkqPetoWqu8'>
+      {/* Corporate Partners */}
+      <div className="bg-blue-800/20 p-6 rounded-xl shadow hover:shadow-lg transition">
+        <h2 className="text-2xl font-bold text-sky-300 mb-3">
+          For Corporate Partners
+        </h2>
+        <p className="text-blue-100 mb-4 leading-relaxed">
+          Corporations can partner with KSRCE NEO to foster innovation, access cutting-edge technologies,
+          and engage with startups. Collaboration opportunities include sponsoring events, providing
+          resources, and participating in joint projects.
+        </p>
+        <a href='https://forms.gle/VBgGqVhkqPetoWqu8'>
           <button className="
             relative inline-block bg-gradient-to-r from-sky-500 to-blue-700 
             text-white font-semibold py-2 px-5 rounded-lg shadow 
@@ -71,9 +90,9 @@ export default function GetInvolved() {
           ">
             Explore Partnership Opportunities
           </button>
-          </a>
-        </div>
+        </a>
       </div>
     </div>
+    </div >
   );
 }

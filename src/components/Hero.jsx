@@ -34,19 +34,20 @@ const Hero = () => {
   }, []);
 
   const highlights = [
-    { title: "Startups Incubated", value: "50+" },
-    { title: "Funding Raised", value: "$10M+" },
-    { title: "Jobs Created", value: "200+" },
+    { title: "Startup Onboarded", value: "6+" },
+    { title: "Student Innovators", value: "20+" },
+    { title: "Idea Validated", value: "50+" },
+    { title: "POCs Developed", value: "10+"}
   ];
 
   const programs = [
     {
-      title: "Incubation Program",
-      desc: "A comprehensive program for early-stage startups, providing access to resources, mentorship, and funding opportunities.",
+      title: "Pre-Incubation Program",
+      desc: "Nurturing early-stage ideas through mentoring, validation, and exposure to the startup ecosystem.",
     },
     {
-      title: "Acceleration Program",
-      desc: "An intensive program designed to accelerate the growth of startups through workshops, networking, and investor connections.",
+      title: "Incubation Program",
+      desc: "Supporting startups with infrastructure, expert guidance, and market access to accelerate their growth.",
     },
     {
       title: "Mentorship Program",
@@ -206,7 +207,7 @@ const Hero = () => {
         </div>
 
         {/* Highlights */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 mt-12">
           {highlights.map((item, i) => (
             <motion.div
               key={i}
