@@ -40,7 +40,7 @@ export default function GetInvolved() {
             resources you need to accelerate your business growth. Join us and turn your vision
             into a successful venture.
           </p>
-          <a href='https://forms.gle/Wc7M6TbAMW5C3JjHA'>
+          <a href='https://forms.gle/xtUJMPLvaVZLBZ3o9'>
             <button className="relative inline-block bg-gradient-to-r from-sky-500 to-blue-700 text-white font-semibold py-2 px-5 rounded-lg shadow 
             hover:shadow-xl hover:scale-105 transition transform before:absolute before:inset-0 before:bg-white/10 before:opacity-0 hover:before:opacity-10 before:rounded-lg before:transition"
             >
@@ -93,6 +93,6 @@ export default function GetInvolved() {
         </a>
       </div>
     </div>
-    </div >
+    </div>
   );
 }

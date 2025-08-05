@@ -46,7 +46,7 @@ const successMetrics = [
 export default function StartupsPage() {
   return (
     <section className="bg-white px-6 md:px-20 py-16 text-[#0D1B2A]">
-      <h2 className="text-3xl font-bold mb-10 text-[#E76F51]">Startups</h2>
+      <h2 className="text-4xl font-bold mb-10 text-[#E76F51]">Startups</h2>
 
       {/* Spotlight */}
       <div className="mb-12">

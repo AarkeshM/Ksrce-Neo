@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaLinkedin, FaInstagram } from 'react-icons/fa'; // Social Icons
 
 const Footer = () => {
   return (
@@ -11,13 +12,14 @@ const Footer = () => {
       className="bg-blue-950 py-10 text-blue-100"
     >
       <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row gap-6 md:gap-10">
+        
         {/* Left: Contact Info */}
         <div className="flex-1 space-y-3 text-center md:text-left">
           <p className="text-2xl font-bold text-white">Contact Us</p>
 
           <p className="text-lg">
             <a
-              href="mailto:info@ksrce.edu.in"
+              href="mailto:neo@ksrce.ac.in"
               className="hover:text-blue-300 transition-colors"
             >
               neo@ksrce.ac.in
@@ -26,7 +28,7 @@ const Footer = () => {
 
           <p className="text-lg">
             <a
-              href="tel:+919XXXXXXXXX"
+              href="tel:+918220244951"
               className="hover:text-blue-300 transition-colors"
             >
               +91-8220244951
@@ -36,6 +38,27 @@ const Footer = () => {
           <p className="text-lg">
             KSRCE Council For Innovation & Incubation, Tiruchengode, Tamil Nadu
           </p>
+
+          {/* Social Media Icons */}
+          <div className="flex justify-center md:justify-start gap-4 mt-4">
+            <a
+              href="https://www.linkedin.com/company/ksrce-neo/" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-300 hover:text-white text-2xl transition-colors"
+            >
+              <FaLinkedin />
+            </a>
+
+            <a
+              href="https://www.instagram.com/ksrceneo_official?igsh=ZmZoc2NrOXhmcXht"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-400 hover:text-white text-2xl transition-colors"
+            >
+              <FaInstagram />
+            </a>
+          </div>
 
           <div className="border-t border-blue-600 mt-6 pt-4">
             <p className="text-sm text-blue-300">
@@ -57,7 +80,6 @@ const Footer = () => {
           referrerPolicy="no-referrer-when-downgrade"
           className="w-full max-w-md shadow-lg"
         />
-
       </div>
     </motion.footer>
   );

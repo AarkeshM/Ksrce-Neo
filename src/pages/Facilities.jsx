@@ -60,7 +60,7 @@ const fadeInUp = {
 
 const Facilities = () => (
   <section className="w-full px-4 py-16 bg-gradient-to-br from-sky-700 via-sky-600 to-sky-700">
-    <h2 className="text-3xl md:text-4xl font-bold text-center text-blue-200 mb-10">
+    <h2 className="text-4xl md:text-4xl font-bold text-center text-blue-200 mb-10">
       Our Incubation Facilities
     </h2>
     <div className="flex flex-col gap-12 max-w-5xl mx-auto">
