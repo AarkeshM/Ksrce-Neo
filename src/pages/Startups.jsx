@@ -1,4 +1,9 @@
 import React from "react";
+import nexgen from "../photos/nexgen.png";
+import neura from "../photos/neura.png";
+import praskla from "../photos/praskla.jpg"
+import azhien from "../photos/azhien.png";
+import aprina from "../photos/arpina.png";
 
 const successStories = [
   {
@@ -20,35 +25,30 @@ const successStories = [
 
 const currentStartups = [
   {
-    title: "HealthTech Innovations",
-    desc: "Developing wearable tech for personalized health monitoring.",
-    img: "https://th.bing.com/th/id/OIP.rXC1xwAmiRZ7MUc-qYvlngHaEL?w=277&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
-  },
-  {
-    title: "EduGrowth Solutions",
+    title: "NeuraAi Solutions Pvt",
     desc: "Creating innovative platforms for online learning and skill development.",
-    img: "https://th.bing.com/th/id/OIP.5PRPhf-N7kIz3QBx7_G61wHaEK?w=301&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
+    img: neura,
   },
   {
-    title: "AgriTech Pioneers",
-    desc: "Revolutionizing agriculture with precision farming technologies.",
-    img: "https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "FinTech Ventures",
-    desc: "Building next-gen financial tools for seamless transactions.",
-    img: "https://images.unsplash.com/photo-1556742031-c6961e8560b0?auto=format&fit=crop&w=800&q=80",
-  },
-  {
-    title: "SmartCity Systems",
+    title: "Arpina solutions Pvt",
     desc: "Designing smart solutions for urban living and sustainability.",
-    img: "https://images.unsplash.com/photo-1497493292307-31c376b6e479?auto=format&fit=crop&w=800&q=80",
+    img: aprina,
   },
   {
-    title: "Creative Minds Studio",
-    desc: "Fostering creativity and innovation in digital content creation.",
-    img: "https://images.unsplash.com/photo-1607746882042-944635dfe10e?auto=format&fit=crop&w=800&q=80",
+    title: "Azhizen Solutions Pvt Ltd",
+    desc: "Building next-gen financial tools for seamless transactions.",
+    img: azhien,
   },
+  {
+    title: "Praskla Technology",
+    desc: "Revolutionizing agriculture with precision farming technologies.",
+    img: praskla,
+  },
+  {
+    title: "NexGen Nextopia Pvt",
+    desc: "Developing wearable tech for personalized health monitoring.",
+    img: nexgen,
+  }
 ];
 
 export default function Startups() {
@@ -84,22 +84,24 @@ export default function Startups() {
 
       <section className="px-6 md:px-10 py-6">
         <h2 className="text-3xl font-bold mb-6 text-sky-300">🚧 Current Startups</h2>
-        <div className="grid gap-6 md:grid-cols-3">
+
+        <div className="flex flex-wrap justify-center gap-16">
           {currentStartups.map((s, i) => (
             <div
               key={i}
-              className="group bg-white/5 border border-sky-600 shadow-md rounded-none overflow-hidden transform hover:scale-105 hover:shadow-xl transition-all duration-500"
+              className="group bg-white/5 border border-sky-600 shadow-md overflow-hidden 
+                   transform hover:scale-105 hover:shadow-xl transition-all duration-500 w-68"
             >
-              <div className="overflow-hidden">
+              <div className="h-40 w-full flex items-center justify-center bg-white">
                 <img
                   src={s.img}
                   alt={s.title}
-                  className="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="max-h-36 max-w-full object-contain transition-transform duration-700 group-hover:scale-110"
                 />
               </div>
-              <div className="p-4">
-                <h3 className="font-bold text-lg text-sky-100">{s.title}</h3>
-                <p className="text-sm text-sky-300">{s.desc}</p>
+              <div className="p-4 bg-sky-600/20">
+                <h3 className="font-bold text-base text-sky-100">{s.title}</h3>
+                <p className="text-xs text-sky-300">{s.desc}</p>
               </div>
             </div>
           ))}
@@ -107,13 +109,13 @@ export default function Startups() {
       </section>
 
       <div className="flex flex-wrap justify-center gap-4 mt-8 pb-12">
-      <a href="/getinvolved">
-        <button className="
+        <a href="/getinvolved">
+          <button className="
           px-6 py-3 bg-gradient-to-r from-sky-500 to-blue-700 text-white font-semibold shadow-lg
           hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transform transition-all rounded-none
         ">
-          Apply Now
-        </button>
+            Apply Now
+          </button>
         </a>
       </div>
     </div>

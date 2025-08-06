@@ -36,7 +36,7 @@ export default function Domains() {
   const [active, setActive] = useState(null);
 
   const handleToggle = (index) => {
-    setActive(active === index ? null : index); // Tap toggle for mobile
+    setActive(active === index ? null : index); 
   };
 
   return (

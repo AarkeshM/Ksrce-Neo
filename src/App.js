@@ -9,6 +9,7 @@ import Programs from "./pages/Programs";
 import Startups from "./pages/Startups";
 import GetInvolved from "./pages/GetInvolved";
 import Facilities from "./pages/Facilities";
+import FooterTicker from "./pages/FooterTicker";
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
             <Route path="/facilites" element={<Facilities />} />
           </Routes>
         </main>
+        <FooterTicker />
         <Footer />
       
     </Router>
