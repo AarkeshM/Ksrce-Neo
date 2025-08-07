@@ -22,14 +22,15 @@ const domainSectors = [
     ],
   },
   {
-    title: "Green & Sustainable Technologies",
-    color: "from-teal-300 to-lime-500",
-    textColor: "text-green-700",
-    domains: [
-      { icon: "🌱", title: "Clean Energy & Sustainable Engineering", desc: "Eco-friendly solutions for a sustainable future." },
-      { icon: "🐓", title: "AgriTech & PoultryTech", desc: "Smart agriculture and poultry innovations for better productivity." },
-    ],
-  },
+  title: "Green & Sustainable Technologies",
+  color: "from-[#34D399] to-[#059669]",   // vibrant green gradient
+  textColor: "text-[#BBF7D0]",            // light green text for contrast on blue
+  domains: [
+    { icon: "🌱", title: "Clean Energy & Sustainable Engineering", desc: "Eco-friendly solutions for a sustainable future." },
+    { icon: "🐓", title: "AgriTech & PoultryTech", desc: "Smart agriculture and poultry innovations for better productivity." },
+  ],
+},
+
 ];
 
 export default function Domains() {
