@@ -238,18 +238,6 @@ const AboutUs = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap justify-center gap-4 mt-8 pb-12">
-        <a href="/gallery">
-          <button className="
-          px-6 py-3 bg-gradient-to-r from-sky-500 to-blue-700 text-white font-semibold shadow-lg
-          hover:shadow-2xl hover:-translate-y-1 hover:scale-105 transform transition-all rounded-xl
-        ">
-            <span>Explore Gallery </span>
-            <span>➟</span>
-          </button>
-        </a>
-      </div>
-
         {/* Core Values */}
         <motion.h3
           variants={fadeInUp(0.8)}

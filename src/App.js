@@ -10,7 +10,7 @@ import Startups from "./pages/Startups";
 import GetInvolved from "./pages/GetInvolved";
 import Facilities from "./pages/Facilities";
 import FooterTicker from "./pages/FooterTicker";
-import Gallery from "./pages/Gallery";
+
 
 
 const App = () => {
@@ -29,7 +29,6 @@ const App = () => {
             <Route path="/startups" element={<Startups />} />
             <Route path="/getinvolved" element={<GetInvolved />} />
             <Route path="/facilites" element={<Facilities />} />
-            <Route path="/gallery" element={<Gallery />} />
           </Routes>
         </main>
         <FooterTicker />
