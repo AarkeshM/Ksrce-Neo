@@ -16,7 +16,6 @@ import founder from "../photos/founder.jpg";
 import meeting from "../photos/meeting.jpg";
 import msme from "../photos/msme.jpg";
 import team from "../photos/team.jpg";
-import dream from "../photos/dream.jpg";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -116,21 +115,15 @@ const events = [
     date: "2025",
     image: msme,
     description: "KSRCE recognized as Host Institute; students won ₹15 Lakhs grant."
-  },
-  {
-    title: "Naan Mudhalvan – 18 Ideas Funded",
-    date: "2025",
-    image: dream,
-    description: "18 ideas funded with ₹1.8 Lakhs under state innovation scheme."
-  },
+  }
 ];
 
 const Upcomingevents = [
-  { title: 'Hackathon: Air Summit', desc: 'Compete and innovate with cutting-edge tech.' },
-  { title: 'Hackathon: Praskla Challenge', desc: 'Solve real-world problems with creativity.' },
-  { title: 'Ideation Boot Camp', desc: 'Turn your idea into a solid business model.' },
+  { title: 'Idea Clinic', desc: 'Compete and innovate with cutting-edge tech.' },
+  { title: 'Hackathon', desc: 'Solve real-world problems with creativity.' },
+  { title: 'Boot Camp', desc: 'Turn your idea into a solid business model.' },
   { title: 'Founder Talk Series', desc: 'Hear from successful founders and leaders.' },
-  { title: 'IPR & Legal Workshop', desc: 'Understand patents, trademarks, and more.' },
+  { title: 'Hatch and Launch Series', desc: 'Understand patents, trademarks, and more.' },
   { title: 'Demo Days & Pitch Events', desc: 'Showcase your startup to investors & mentors.' },
 ];
 

@@ -8,12 +8,12 @@ import working from "../photos/co working space.jpg";
 const facilities = [
   {
     name: "FAB Lab",
-    description: "The 3-seater Individual Cabin at KSCRE NEO offers a private, professional workspace designed for focused productivity and small team collaboration.",
+    description: "The NEO Fab Lab at KSRCE is a dedicated innovation space equipped with tools for prototyping, fabrication, and research. It serves as a hub for students, faculty, and startups to translate ideas into scalable solutions.",
     features: [
-      "Comfortable 3-person seating with ergonomic chairs and spacious tables",
-      "High-speed internet connectivity for seamless workflow",
-      "Ideal for startups, co-founders, or project-based teams needing privacy",
-      "Access to shared amenities and incubation support from KSCRE NEO"],
+      "Guide students in prototype design and product development.",
+      "Support applied R&D and industry collaboration.",
+      "Facilitate technology transfer and innovation.",
+      "Link Fab Lab outcomes with the NEO Pre-Incubation Centre for startups."],
     seatings: 50,
     photo: fablab,
   },

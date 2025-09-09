@@ -2,21 +2,19 @@ import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
 import heroMockup1 from "../assets/hero.jpg";
-import heroMockup3 from "../assets/hero3.jpg";
-import heroMockup4 from "../assets/hero4.jpg";
-import heroMockup5 from "../assets/hero5.jpg";
-import heroMockup6 from "../assets/hero6.jpg";
-import heroMockup7 from "../assets/hero7.jpg";
+import heroMockup2 from "../assets/hero1.jpg";
+import heroMockup3 from "../assets/hero2.jpg";
+import heroMockup4 from "../assets/hero3.jpg";
+import heroMockup5 from "../assets/hero4.jpg";
 import '../index.css';
 import { Link } from "react-router-dom";
 
 const images = [
   heroMockup1,
-  heroMockup5,
-  heroMockup4,
+  heroMockup2,
   heroMockup3,
-  heroMockup6,
-  heroMockup7,
+  heroMockup4,
+  heroMockup5
 ];
 
 const Hero = () => {
