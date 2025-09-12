@@ -5,23 +5,20 @@ import praskla from "../photos/praskla.jpg";
 import azhien from "../photos/newlogo.jpg";
 import aprina from "../photos/arpina.png";
 import inzovate from "../photos/inzovate.jpg";
+import vdo1 from "../photos/vdo1.mp4";
+import vdo2 from "../photos/vdo 2.mp4";
 
 const successStories = [
   {
-    title: "Yukthi Challenge finalists",
-    desc: "Revolutionizing software development with cutting-edge AI solutions.",
-    img: "https://images.inc.com/uploaded_files/image/1920x1080/getty_522302116_2000134220009280265_299511.jpg",
+    title: "Azhizen Solutions (OPC) Private Ltd",
+    desc: "At KSRCE NEO, innovation begins with students, ideas, and the right ecosystem. Our StartupSpotlight features Azhizen Solutions, founded by Mr. Bharathkumar Ramachandiran and team, who turned their vision into reality through incubation support. From idea validation and prototype development to investor pitching and scaling strategies, their journey reflects true innovation. Today, they have launched their market viable product ‘Easemilker’ and secured grants, proving that NEO is indeed a launchpad for entrepreneurial success.",
+    video: vdo1,
   },
   {
-    title: "Student teams gaining internships",
-    desc: "Leading the way in sustainable energy solutions for a greener future.",
-    img: "https://th.bing.com/th/id/OIP.MtPGROtETIlgAqYonESYaQHaDw?w=293&h=180&c=7&r=0&o=7&dpr=1.5&pid=1.7&rm=3",
-  },
-  {
-    title: "Startups selected for external funding",
-    desc: "Transforming digital marketing with data-driven strategies.",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
-  },
+    title: "NexGen Nextopia Pvt Ltd",
+    desc: "NexGen Nextopia is an innovation-driven ecosystem that bridges education and industry, empowering students and entrepreneurs to transform ideas into impactful ventures. With expertise in IoT, AI & ML, web development, AR/VR, and digital marketing, it provides end-to-end support from ideation to execution. Through workshops, mentoring, prototype development, and investor pitching, NexGen Nextopia nurtures innovation and entrepreneurial growth. It is a launchpad for creating future-ready products, careers, and companies.",
+    video: vdo2,
+  }
 ];
 
 const currentStartups = [
@@ -72,13 +69,17 @@ export default function Startups() {
               key={i}
               className="group bg-white/5 border border-sky-300 shadow-md rounded-none overflow-hidden transform hover:scale-105 hover:shadow-xl transition-all duration-500"
             >
+              {/* Video Section */}
               <div className="overflow-hidden">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  className="h-48 w-full object-cover group-hover:scale-110 transition-transform duration-700"
+                <video
+
+                  src={s.video}
+                  controls
+                  className="w-full max-h-80 object-contain group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
+
+              {/* Text Content */}
               <div className="p-4">
                 <h3 className="font-bold text-lg text-sky-100">{s.title}</h3>
                 <p className="text-sm text-sky-300">{s.desc}</p>
