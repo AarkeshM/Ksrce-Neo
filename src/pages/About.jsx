@@ -134,7 +134,7 @@ const AboutUs = () => {
           viewport={{ once: true }}
           className="mb-8 text-blue-100"
         >
-          NEO = Nurturing Emerging Opportunities — We provide a launch pad for
+          NEO (Nurturing Emerging Opportunities) — We provide a launch pad for
           young entrepreneurs to ideate, prototype, and build viable business
           models across key domains including AI/ML, IoT, robotics, agri-tech,
           sustainability, and social impact.

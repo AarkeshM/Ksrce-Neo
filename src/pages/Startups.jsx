@@ -1,9 +1,10 @@
 import React from "react";
 import nexgen from "../photos/nexgen.png";
 import neura from "../photos/neura.png";
-import praskla from "../photos/praskla.jpg"
-import azhien from "../photos/azhien.png";
+import praskla from "../photos/praskla.jpg";
+import azhien from "../photos/newlogo.jpg";
 import aprina from "../photos/arpina.png";
+import inzovate from "../photos/inzovate.jpg";
 
 const successStories = [
   {
@@ -25,29 +26,34 @@ const successStories = [
 
 const currentStartups = [
   {
-    title: "NeuraAi Solutions Pvt",
-    desc: "Creating innovative platforms for online learning and skill development.",
+    title: "NeuraAI Solutions Private Ltd",
+    desc: "AI & ML club fostering innovation, collaboration, and real-world solutions in the artificial intelligence sector.",
     img: neura,
   },
   {
-    title: "Arpina solutions Pvt",
-    desc: "Designing smart solutions for urban living and sustainability.",
+    title: "Arpina solutions Private Ltd",
+    desc: "Driving innovation through BPO, IT placement, and training solutions for tomorrow’s workforce.",
     img: aprina,
   },
   {
-    title: "Azhizen Solutions Pvt Ltd",
-    desc: "Building next-gen financial tools for seamless transactions.",
+    title: "Azhizen Solutions (OPC) Private Ltd",
+    desc: "Revolutionizing Agri & Dairy Tech with Precision Farming Solutions.",
     img: azhien,
   },
   {
     title: "Praskla Technology",
-    desc: "Revolutionizing agriculture with precision farming technologies.",
+    desc: "Driving growth through innovative SaaS solutions.",
     img: praskla,
   },
   {
-    title: "NexGen Nextopia Pvt",
-    desc: "Developing wearable tech for personalized health monitoring.",
+    title: "NexGen Nextopia Private Ltd",
+    desc: "Innovating in the Education & Industry 4.0 sector through technology and execution",
     img: nexgen,
+  },
+  {
+    title: "Inzovate Technologies",
+    desc: "AI-enabled SaaS solutions from CRM to ERP",
+    img: inzovate,
   }
 ];
 
