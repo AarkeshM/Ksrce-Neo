@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 const domainSectors = [
   {
     title: "Deep Tech & Smart Engineering",
-    color: "from-white to-sky-200",
-    textColor: "text-blue-300",
+    textColor: "text-sky-800",
+    border: "border-sky-500",
     domains: [
       { icon: "🤖", title: "Artificial Intelligence", desc: "Innovative AI-driven solutions and applications." },
       { icon: "📡", title: "IoT & Robotics", desc: "Smart connected devices and robotic innovations." },
@@ -15,37 +15,34 @@ const domainSectors = [
   },
   {
     title: "Inclusive & Social Innovation",
-    color: "from-sky-500 to-white",
-    textColor: "text-cyan-300",
+    textColor: "text-blue-800",
+    border: "border-blue-400",
     domains: [
       { icon: "🌍", title: "Social Entrepreneurship & Rural Innovation", desc: "Innovations that create social impact and empower rural communities." },
     ],
   },
   {
-  title: "Green & Sustainable Technologies",
-  color: "from-[#34D399] to-[#059669]",   // vibrant green gradient
-  textColor: "text-[#BBF7D0]",            // light green text for contrast on blue
-  domains: [
-    { icon: "🌱", title: "Clean Energy & Sustainable Engineering", desc: "Eco-friendly solutions for a sustainable future." },
-    { icon: "🐓", title: "AgriTech & PoultryTech", desc: "Smart agriculture and poultry innovations for better productivity." },
-  ],
-},
-
+    title: "Green & Sustainable Technologies",
+    textColor: "text-emerald-800",
+    border: "border-emerald-400",
+    domains: [
+      { icon: "🌱", title: "Clean Energy & Sustainable Engineering", desc: "Eco-friendly solutions for a sustainable future." },
+      { icon: "🐓", title: "AgriTech & PoultryTech", desc: "Smart agriculture and poultry innovations for better productivity." },
+    ],
+  },
 ];
 
 export default function Domains() {
   const [active, setActive] = useState(null);
 
   const handleToggle = (index) => {
-    setActive(active === index ? null : index); 
+    setActive(active === index ? null : index);
   };
 
   return (
-    <div className="bg-gradient-to-br from-sky-700 via-sky-600 to-sky-700 text-center py-16 px-4">
-      <h1 className="text-4xl font-bold text-blue-100 mb-4">
-        Focus Sectors
-      </h1>
-      <p className="max-w-3xl mx-auto text-sm sm:text-base text-blue-300 mb-8 sm:mb-10 px-2">
+    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 text-center py-16 px-4">
+      <h1 className="text-4xl font-bold text-sky-800 mb-4">Focus Sectors</h1>
+      <p className="max-w-3xl mx-auto text-sm sm:text-base text-sky-600 mb-8 sm:mb-10 px-2">
         Explore the diverse focus sectors at KSRCE NEO, driving innovation in
         Deep Tech, Social Impact, and Green Sustainable Technologies.
       </p>
@@ -58,7 +55,6 @@ export default function Domains() {
             {sector.title}
           </h2>
 
-          {/* Mobile: Stack, Desktop: Row */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             {sector.domains.map((domain, index) => {
               const cardIndex = `${sectorIndex}-${index}`;
@@ -80,16 +76,15 @@ export default function Domains() {
                     rotate: [0, 1.2, -1.2, 0],
                     transition: { duration: 0.3, ease: "easeInOut" },
                   }}
-                  onClick={() => handleToggle(cardIndex)} // Tap triggers hover animation on mobile
-                  className={`w-full sm:w-64 p-5 sm:p-6 bg-white rounded-xl text-left shadow-md hover:shadow-xl border-t-4 
-                    border-transparent hover:border-current transition-all duration-300 cursor-pointer
-                    bg-gradient-to-br ${sector.color} bg-opacity-10`}
+                  onClick={() => handleToggle(cardIndex)}
+                  className={`w-full sm:w-64 p-5 sm:p-6 rounded-xl text-left shadow-md hover:shadow-xl 
+                    border-t-4 ${sector.border} bg-white transition-all duration-300 cursor-pointer`}
                 >
                   <div className="text-3xl mb-3">{domain.icon}</div>
                   <h3 className={`text-lg font-semibold mb-1 ${sector.textColor}`}>
                     {domain.title}
                   </h3>
-                  <p className="text-sm text-blue-600">{domain.desc}</p>
+                  <p className="text-sm text-sky-700">{domain.desc}</p>
                 </motion.div>
               );
             })}

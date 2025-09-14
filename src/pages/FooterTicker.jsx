@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "../photos/zoho.jpg"; // Replace with your logo path
+import logo from "../photos/zoho.jpg"
 
 export default function FooterTicker() {
   const text =
     "🚀 We're partnering with Zoho to supercharge startup growth. Startups get ₹1.86 Lakhs Zoho Wallet Credits valid for 360 days. Access Zoho's full suite of tools - CRM, finance, marketing & more! ";
 
   return (
-    <div className="bg-sky-700 text-white py-2 sm:py-3 flex items-center gap-2 sm:gap-4 overflow-hidden relative">
+    <div className="bg-[#DAA520] text-[#191970] py-2 sm:py-3 flex items-center gap-2 sm:gap-4 overflow-hidden relative">
       {/* Responsive Logo */}
       <a
         href="https://www.zoho.com/en-in/startups/founders-registration.html?src=ksrceneo&zredirect=f" 
