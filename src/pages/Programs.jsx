@@ -54,7 +54,7 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 px-4 sm:px-6 lg:px-10 py-16">
+    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 px-4 sm:px-6 lg:px-10 mt-3 py-16">
       {/* Upcoming Events */}
       <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-10">
         Upcoming Events

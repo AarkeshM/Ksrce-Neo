@@ -73,7 +73,7 @@ const fadeInUp = (delay = 0) => ({
 
 const AboutUs = () => {
   return (
-    <section id="about" className="py-16 px-6 bg-white text-sky-900">
+    <section id="about" className="py-16 px-6 mt-2 bg-white text-sky-900">
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <motion.h2

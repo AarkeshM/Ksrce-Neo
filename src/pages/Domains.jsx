@@ -40,7 +40,7 @@ export default function Domains() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 text-center py-16 px-4">
+    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 text-center py-16 px-4 mt-3">
       <h1 className="text-4xl font-bold text-sky-800 mb-4">Focus Sectors</h1>
       <p className="max-w-3xl mx-auto text-sm sm:text-base text-sky-600 mb-8 sm:mb-10 px-2">
         Explore the diverse focus sectors at KSRCE NEO, driving innovation in
