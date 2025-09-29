@@ -1,3 +1,4 @@
+// src/components/Startups.jsx
 import React from "react";
 import nexgen from "../photos/nexgen.png";
 import neura from "../photos/neura.png";
@@ -44,12 +45,12 @@ const currentStartups = [
   },
   {
     title: "NexGen Nextopia Private Ltd",
-    desc: "Innovating in the Education & Industry 4.0 sector through technology and execution",
+    desc: "Innovating in the Education & Industry 4.0 sector through technology and execution.",
     img: nexgen,
   },
   {
     title: "Inzovate Technologies",
-    desc: "AI-enabled SaaS solutions from CRM to ERP",
+    desc: "AI-enabled SaaS solutions from CRM to ERP.",
     img: inzovate,
   },
 ];
@@ -71,17 +72,25 @@ export default function Startups() {
           {successStories.map((s, i) => (
             <div
               key={i}
-              className="group bg-blue-50 border border-blue-200 rounded-xl overflow-hidden shadow hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+              className="group bg-blue-50 border border-blue-200 rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
             >
               {/* Video section */}
               <div className="overflow-hidden bg-white">
-                <div className="overflow-hidden"> <video src={s.video} controls className="w-full max-h-80 object-contain group-hover:scale-105 transition-transform duration-700" /> </div>
+                <video
+                  src={s.video}
+                  controls
+                  className="w-full max-h-80 object-contain group-hover:scale-105 transition-transform duration-700"
+                />
               </div>
 
               {/* Text section */}
-              <div className="p-5">
-                <h3 className="font-bold text-lg text-blue-900 mb-2">{s.title}</h3>
-                <p className="text-sm text-blue-700 leading-relaxed">{s.desc}</p>
+              <div className="p-6">
+                <h3 className="font-bold text-lg text-blue-900 mb-3">
+                  {s.title}
+                </h3>
+                <p className="text-sm text-blue-700 leading-relaxed">
+                  {s.desc}
+                </p>
               </div>
             </div>
           ))}
@@ -98,17 +107,17 @@ export default function Startups() {
           {currentStartups.map((s, i) => (
             <div
               key={i}
-              className="group bg-blue-50 border border-blue-200 rounded-xl shadow hover:shadow-xl hover:-translate-y-1 transition-all duration-500"
+              className="group bg-blue-50 border border-blue-200 rounded-2xl shadow-md hover:shadow-2xl hover:-translate-y-2 transition-all duration-500"
             >
-              <div className="h-40 flex items-center justify-center bg-white">
+              <div className="h-44 flex items-center justify-center bg-white">
                 <img
                   src={s.img}
                   alt={s.title}
                   className="max-h-32 max-w-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-4 bg-blue-50">
-                <h3 className="font-bold text-base text-blue-900 mb-1">
+              <div className="p-5 bg-blue-50">
+                <h3 className="font-bold text-base text-blue-900 mb-2">
                   {s.title}
                 </h3>
                 <p className="text-xs text-blue-700">{s.desc}</p>
@@ -119,9 +128,9 @@ export default function Startups() {
       </section>
 
       {/* Apply Button */}
-      <div className="flex justify-center mt-12 pb-16">
+      <div className="flex justify-center mt-16 pb-20">
         <a href="/getinvolved">
-          <button className="px-8 py-3 bg-gradient-to-r from-blue-600 to-sky-600 text-white font-semibold rounded-lg shadow-md hover:shadow-xl hover:-translate-y-1 hover:scale-105 transition">
+          <button className="px-10 py-3.5 bg-gradient-to-r from-blue-600 to-sky-600 text-white font-semibold rounded-xl shadow-md hover:shadow-2xl hover:-translate-y-2 hover:scale-105 transition-all duration-500">
             Apply Now
           </button>
         </a>

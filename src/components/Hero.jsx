@@ -1,20 +1,20 @@
 import React, { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import { Link } from "react-router-dom";
 import heroMockup1 from "../assets/hero.jpg";
 import heroMockup2 from "../assets/hero1.jpg";
 import heroMockup3 from "../assets/hero2.jpg";
 import heroMockup4 from "../assets/hero3.jpg";
 import heroMockup5 from "../assets/hero4.jpg";
-import '../index.css';
-import { Link } from "react-router-dom";
+import "../index.css";
 
 const images = [
   heroMockup1,
   heroMockup2,
   heroMockup3,
   heroMockup4,
-  heroMockup5
+  heroMockup5,
 ];
 
 const Hero = () => {
@@ -35,7 +35,7 @@ const Hero = () => {
     { title: "Startup Onboarded", value: "6+" },
     { title: "Student Innovators", value: "20+" },
     { title: "Idea Validated", value: "50+" },
-    { title: "POCs Developed", value: "10+"}
+    { title: "POCs Developed", value: "10+" },
   ];
 
   const programs = [
@@ -57,13 +57,12 @@ const Hero = () => {
     {
       question: "Who can apply for incubation?",
       answer: [
-        "   KSRCE NEO Incubation Centre welcomes:",
+        "KSRCE NEO Incubation Centre welcomes:",
         "•  Students (from any department with innovative ideas)",
         "•  Faculty members with research-driven or product-based concepts",
         "•  Startups & Entrepreneurs from inside and outside KSRCE",
         "•  Alumni with a strong vision to build impactful ventures",
         "•  Research teams seeking to commercialize innovations",
-        "•  If you have a solution-oriented idea, we're here to support your journey from concept to company!",
       ],
     },
     {
@@ -83,12 +82,11 @@ const Hero = () => {
     {
       question: "How do we access funding support?",
       answer: [
-        "•  KSRCE NEO Incubation Centre helps startups in multiple ways:",
+        "KSRCE NEO Incubation Centre helps startups in multiple ways:",
         "•  Connect with angel investors, venture capitalists, and government funding agencies",
         "•  Guidance to apply for grants and schemes (MSME, DST, EDII, Start-up India, etc.)",
         "•  Pitching opportunities at demo days and startup events",
         "•  Mentorship on preparing business plans, financial projections, and investor pitches",
-        "•  We walk with you at every step of your funding journey.",
       ],
     },
     {
@@ -116,15 +114,15 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative w-full min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-50 text-center overflow-hidden">
-      <div className="relative z-20 mt-20 flex flex-col justify-center items-center min-h-screen px-4">
+    <section className="relative w-full min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-100 text-center overflow-hidden">
+      <div className="relative z-20 mt-24 flex flex-col justify-center items-center min-h-screen px-4">
         {/* Hero Text */}
         <div className="w-full max-w-4xl mx-auto">
           <h2 className="text-xl sm:text-2xl md:text-3xl font-serif text-blue-950 leading-tight drop-shadow">
             'WELCOME TO KSRCE NEO – NURTURING EMERGING OPPORTUNITIES'
           </h2>
 
-          <p className="mt-4 text-bold sm:text-lg md:text-xl text-[#0000A0]">
+          <p className="mt-4 sm:text-lg md:text-xl text-blue-800 font-medium">
             KSRCE NEO is the registered incubation centre as section 8 company
             of K.S.R. College of Engineering, Tamil Nadu. We foster innovation,
             entrepreneurship, and startup growth by empowering students,
@@ -152,19 +150,16 @@ const Hero = () => {
           <motion.button
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            className="mt-6 bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-100 shadow-md"
+            className="mt-6 bg-white text-blue-900 px-6 py-2 rounded-full hover:bg-blue-100 shadow-md border border-blue-200"
           >
-            <Link
-              to="/facilites"
-              className="flex items-center gap-2 text-blue-900"
-            >
+            <Link to="/facilities" className="flex items-center gap-2 text-blue-900">
               <span>Explore Facilities</span>
               <span>➟</span>
             </Link>
           </motion.button>
         </div>
 
-        {/* 3D Image Carousel with Controls */}
+        {/* Image Carousel */}
         <div
           className="w-full max-w-[650px] sm:max-w-[600px] lg:max-w-[900px] aspect-video rounded-xl overflow-hidden shadow-2xl flex items-center justify-center relative mt-8"
           style={{ perspective: 1200 }}
@@ -199,7 +194,10 @@ const Hero = () => {
                 ease: [0.77, 0.2, 0.15, 1.01],
               }}
               className="w-full h-full object-cover rounded-xl"
-              style={{ backfaceVisibility: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,.25)" }}
+              style={{
+                backfaceVisibility: "hidden",
+                boxShadow: "0 10px 30px rgba(0,0,0,.25)",
+              }}
             />
           </AnimatePresence>
         </div>
@@ -214,12 +212,12 @@ const Hero = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-white text-blue-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform"
+              className="bg-gradient-to-br from-sky-50 to-white text-blue-900 
+                         p-6 rounded-xl shadow-lg border border-blue-200/60 
+                         hover:scale-105 hover:shadow-xl transition-all"
             >
-              <h3 className="font-semibold text-xl mb-3">{item.title}</h3>
-              <p className="text-2xl font-extrabold text-blue-950">
-                {item.value}
-              </p>
+              <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+              <p className="text-2xl font-extrabold text-[#0a2351]">{item.value}</p>
             </motion.div>
           ))}
         </div>
@@ -233,14 +231,16 @@ const Hero = () => {
             {programs.map((prog, i) => (
               <motion.div
                 key={i}
-                className="bg-white text-blue-800 p-6 rounded-lg shadow-md hover:shadow-lg hover:scale-[1.03] transition-all"
+                className="bg-gradient-to-br from-white via-sky-50 to-white
+                           text-blue-900 p-6 rounded-xl border border-blue-200/60
+                           shadow-md hover:shadow-lg hover:scale-[1.03] transition-all"
                 variants={itemVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.2 }}
                 custom={i}
               >
-                <h3 className="font-semibold text-xl mb-3">{prog.title}</h3>
+                <h3 className="font-semibold text-lg mb-3">{prog.title}</h3>
                 <p className="text-sm text-blue-700">{prog.desc}</p>
               </motion.div>
             ))}
@@ -256,14 +256,16 @@ const Hero = () => {
             {faqs.map((faq, i) => (
               <motion.div
                 key={i}
-                className="shadow-md bg-white/90 border border-blue-200 transition hover:shadow-lg hover:border-blue-400 w-full sm:min-w-[600px] sm:max-w-[600px] mx-auto rounded-[20px]"
+                className="bg-gradient-to-br from-white to-sky-50/70
+                           border border-blue-200/70 shadow-md 
+                           hover:shadow-lg hover:border-blue-400 
+                           transition rounded-2xl"
               >
                 <button
                   onClick={() => toggleFAQ(i)}
-                  className="w-full flex justify-between items-right text-left px-5 py-4 text-blue-800 font-medium focus:outline-none"
+                  className="w-full flex justify-between items-right text-left px-5 py-4 text-blue-900 font-medium focus:outline-none"
                 >
                   <span className="text-center md:text-lg">{faq.question}</span>
-
                   <motion.span
                     initial={{ rotate: 0 }}
                     animate={{ rotate: openIndex === i ? 180 : 0 }}
@@ -284,11 +286,8 @@ const Hero = () => {
                       className="px-5 pb-4 text-blue-700 text-left text-sm w-full space-y-1"
                     >
                       {Array.isArray(faq.answer)
-                        ? faq.answer.map((line, idx) => (
-                          <p key={idx}>{line}</p>
-                        ))
-                        : <p>{faq.answer}</p>
-                      }
+                        ? faq.answer.map((line, idx) => <p key={idx}>{line}</p>)
+                        : <p>{faq.answer}</p>}
                     </motion.div>
                   )}
                 </AnimatePresence>

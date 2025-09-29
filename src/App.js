@@ -28,7 +28,7 @@ const App = () => {
             <Route path='/programs' element={<Programs />} />
             <Route path="/startups" element={<Startups />} />
             <Route path="/getinvolved" element={<GetInvolved />} />
-            <Route path="/facilites" element={<Facilities />} />
+            <Route path="/facilities" element={<Facilities />} />
           </Routes>
         </main>
         <FooterTicker />

@@ -54,9 +54,9 @@ const Gallery = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 px-4 sm:px-6 lg:px-10 mt-3 py-16">
+    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 px-4 sm:px-6 lg:px-10 mt-5 py-16">
       {/* Upcoming Events */}
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-10">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-sky-800 mb-10">
         Upcoming Events
       </h2>
 
@@ -69,11 +69,11 @@ const Gallery = () => {
             viewport={{ once: true, amount: 0.2 }}
             transition={{ delay: index * 0.1, duration: 0.3 }}
             whileHover={{ y: -5 }}
-            className="bg-blue-50 border border-blue-200 p-5 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300"
+            className="bg-white border border-sky-300 p-5 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300"
           >
-            <h3 className="text-lg font-bold text-blue-900 mb-1">{event.title}</h3>
-            <p className="text-sm text-blue-700">{event.desc}</p>
-            <button className="mt-4 inline-flex items-center text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-blue-600 to-sky-700 hover:from-blue-700 hover:to-sky-800 px-4 py-2 rounded-full shadow transition">
+            <h3 className="text-lg font-bold text-sky-900 mb-1">{event.title}</h3>
+            <p className="text-sm text-sky-700">{event.desc}</p>
+            <button className="mt-4 inline-flex items-center text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-sky-600 to-blue-700 hover:from-sky-700 hover:to-blue-800 px-4 py-2 rounded-full shadow transition">
               View Full Details
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -91,7 +91,7 @@ const Gallery = () => {
       </div>
 
       {/* Past Events */}
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-blue-700 mb-12">
+      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-sky-800 mb-12">
         Past Events
       </h2>
 
@@ -100,9 +100,12 @@ const Gallery = () => {
           <div
             key={index}
             data-aos="fade-up"
-            className="bg-blue-50 border border-blue-200 rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+            className="bg-white border border-sky-300 rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
           >
-            <div className="flex justify-center items-center bg-white p-4" style={{ minHeight: "200px" }}>
+            <div
+              className="flex justify-center items-center bg-white p-4"
+              style={{ minHeight: "200px" }}
+            >
               <img
                 src={event.image}
                 alt={event.title}
@@ -110,9 +113,13 @@ const Gallery = () => {
               />
             </div>
             <div className="p-5">
-              <h3 className="text-lg font-semibold text-blue-900 mb-1">{event.title}</h3>
-              <p className="text-xs text-blue-500 mb-1">{event.date}</p>
-              <p className="text-sm text-blue-700 leading-relaxed">{event.description}</p>
+              <h3 className="text-lg font-semibold text-sky-900 mb-1">
+                {event.title}
+              </h3>
+              <p className="text-xs text-sky-500 mb-1">{event.date}</p>
+              <p className="text-sm text-sky-700 leading-relaxed">
+                {event.description}
+              </p>
             </div>
           </div>
         ))}

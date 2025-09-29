@@ -13,29 +13,26 @@ const teamMembers = [
     name: "Dr. K. Lakshmi",
     role: "Director – Innovation and Incubation",
     photo: lakshmi,
-    linkedin:
-      "https://www.linkedin.com/in/dr-k-lakshmi-a873b476?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin: "https://www.linkedin.com/in/dr-k-lakshmi-a873b476",
   },
   {
     name: "Dr. A. Murugesan",
     role: "Lead – Innovation and Incubation",
     photo: murugesan,
-    linkedin:
-      "https://www.linkedin.com/in/murugesan-arumugam?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin: "https://www.linkedin.com/in/murugesan-arumugam",
   },
   {
     name: "J. Harshini",
     role: "Incubation Manager, KSRCE NEO",
     photo: harshini,
     linkedin:
-      "https://www.linkedin.com/in/harshini-jayasankaran-74474813b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      "https://www.linkedin.com/in/harshini-jayasankaran-74474813b",
   },
   {
     name: "Pavithran G",
     role: "Incubation Associate, KSRCE NEO",
     photo: pavithran,
-    linkedin:
-      "https://www.linkedin.com/in/pavithran-g-a3a333231?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+    linkedin: "https://www.linkedin.com/in/pavithran-g-a3a333231",
   },
 ];
 
@@ -73,7 +70,10 @@ const fadeInUp = (delay = 0) => ({
 
 const AboutUs = () => {
   return (
-    <section id="about" className="py-16 px-6 mt-2 bg-white text-sky-900">
+    <section
+      id="about"
+      className="py-16 px-6 mt-5 bg-gradient-to-b from-sky-50 to-white text-sky-900"
+    >
       <div className="max-w-6xl mx-auto">
         {/* Heading */}
         <motion.h2
@@ -104,12 +104,12 @@ const AboutUs = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="bg-white rounded-lg p-6 shadow hover:shadow-lg hover:scale-105 transition"
+              className="bg-white rounded-lg p-6 shadow hover:shadow-lg hover:scale-105 transition border border-sky-200"
             >
-              <h3 className="text-2xl font-semibold text-sky-800 mb-2">
+              <h3 className="text-2xl font-semibold text-sky-900 mb-2">
                 {item.title}
               </h3>
-              <p className="text-sky-600">{item.desc}</p>
+              <p className="text-sky-700">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -154,9 +154,9 @@ const AboutUs = () => {
           viewport={{ once: true }}
           className="mb-12 text-sky-700"
         >
-          Artificial Intelligence & Data Science — IoT & Embedded Systems — Green
-          Energy & Sustainable Tech — Smart Agriculture & PoultryTech — HealthTech
-          & Biomedical Devices — EdTech & Rural Innovation — Social
+          Artificial Intelligence & Data Science — IoT & Embedded Systems —
+          Green Energy & Sustainable Tech — Smart Agriculture & PoultryTech —
+          HealthTech & Biomedical Devices — EdTech & Rural Innovation — Social
           Entrepreneurship — Smart Mobility & EVs.
         </motion.p>
 
@@ -170,42 +170,42 @@ const AboutUs = () => {
         >
           Our Team
         </motion.h3>
-        <p className="text-center text-sky-600 mt-2 mb-8">
+        <p className="text-center text-sky-700 mt-2 mb-8">
           Meet the brilliant minds at KSRCE NEO
         </p>
 
-        {/* Dean */}
+        {/* Dean - First Row */}
         <div className="flex justify-center mb-10">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition w-52 border border-sky-100"
+            className="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-xl transition w-72 border border-sky-200"
           >
             <img
               src={venkatesan}
               alt="Dr. M. Venkatesan"
-              className="w-36 h-36 mx-auto mb-3 object-cover rounded-lg shadow"
+              className="w-48 h-48 mx-auto mb-4 object-cover rounded-lg shadow-md"
             />
-            <h4 className="text-lg font-semibold text-sky-800">
+            <h4 className="text-xl font-semibold text-sky-900">
               Dr. M. Venkatesan
             </h4>
-            <p className="text-sky-600 text-sm">
+            <p className="text-sky-700 text-sm">
               Dean, K.S.R. College of Engineering
             </p>
             <a
               href="https://www.linkedin.com/in/dr-venkatesan-muthusamy-30842325"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sky-600 text-xs mt-2 hover:text-sky-800 transition"
+              className="inline-flex items-center gap-1 text-sky-600 text-sm mt-3 hover:text-sky-800 transition"
             >
               <FaLinkedin /> View LinkedIn
             </a>
           </motion.div>
         </div>
 
-        {/* Team Members Grid */}
+        {/* Remaining Members - Second Row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center mb-12">
           {teamMembers.map((m, i) => (
             <motion.div
@@ -214,15 +214,17 @@ const AboutUs = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2, duration: 0.5 }}
-              className="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition w-44 border border-sky-100"
+              className="bg-white rounded-xl shadow-md p-4 text-center hover:shadow-lg transition w-52 border border-sky-200"
             >
               <img
                 src={m.photo}
                 alt={m.name}
-                className="w-40 h-40 mx-auto mb-2 object-cover shadow rounded-lg"
+                className="w-40 h-40 mx-auto mb-3 object-cover shadow rounded-lg"
               />
-              <h4 className="text-sm font-semibold text-sky-800">{m.name}</h4>
-              <p className="text-sky-600 text-xs">{m.role}</p>
+              <h4 className="text-base font-semibold text-sky-900">
+                {m.name}
+              </h4>
+              <p className="text-sky-700 text-xs">{m.role}</p>
               <a
                 href={m.linkedin}
                 target="_blank"
@@ -253,13 +255,13 @@ const AboutUs = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
-              className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg hover:scale-105 transition border border-sky-100"
+              className="bg-white rounded-lg p-6 text-center shadow-md hover:shadow-lg hover:scale-105 transition border border-sky-200"
             >
               <div className="text-5xl mb-3">{val.icon}</div>
-              <h4 className="text-lg font-semibold text-sky-800">
+              <h4 className="text-lg font-semibold text-sky-900">
                 {val.title}
               </h4>
-              <p className="text-sky-600 mt-2">{val.desc}</p>
+              <p className="text-sky-700 mt-2">{val.desc}</p>
             </motion.div>
           ))}
         </div>

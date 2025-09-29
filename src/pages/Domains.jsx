@@ -40,7 +40,7 @@ export default function Domains() {
   };
 
   return (
-    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 text-center py-16 px-4 mt-3">
+    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 text-center py-16 px-4 mt-5">
       <h1 className="text-4xl font-bold text-sky-800 mb-4">Focus Sectors</h1>
       <p className="max-w-3xl mx-auto text-sm sm:text-base text-sky-600 mb-8 sm:mb-10 px-2">
         Explore the diverse focus sectors at KSRCE NEO, driving innovation in
@@ -80,11 +80,13 @@ export default function Domains() {
                   className={`w-full sm:w-64 p-5 sm:p-6 rounded-xl text-left shadow-md hover:shadow-xl 
                     border-t-4 ${sector.border} bg-white transition-all duration-300 cursor-pointer`}
                 >
-                  <div className="text-3xl mb-3">{domain.icon}</div>
+                  <div className={`text-3xl mb-3 ${sector.iconColor}`}>
+                    {domain.icon}
+                  </div>
                   <h3 className={`text-lg font-semibold mb-1 ${sector.textColor}`}>
                     {domain.title}
                   </h3>
-                  <p className="text-sm text-sky-700">{domain.desc}</p>
+                  <p className={`text-sm ${sector.descColor}`}>{domain.desc}</p>
                 </motion.div>
               );
             })}
