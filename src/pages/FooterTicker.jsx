@@ -1,31 +1,49 @@
 import React from "react";
-import logo from "../photos/zoho.jpg"
+import logo from "../photos/zoho.jpg";
+import { FaStar } from "react-icons/fa"; // Added for a premium icon
 
 export default function FooterTicker() {
-  const text =
-    "🚀 We're partnering with Zoho to supercharge startup growth. Startups get ₹1.86 Lakhs Zoho Wallet Credits valid for 360 days. Access Zoho's full suite of tools - CRM, finance, marketing & more! ";
+  // --- Updated text to use a span for the gold accent ---
+  const textContent = (
+    <>
+      We're partnering with Zoho to supercharge startup growth. Startups get{" "}
+      <span className="font-bold text-amber-500">
+        ₹1.86 Lakhs Zoho Wallet Credits
+      </span>{" "}
+      valid for 360 days. Access Zoho's full suite of tools - CRM, finance,
+      marketing & more!
+    </>
+  );
 
   return (
-    <div className="bg-[#DAA520] text-[#191970] py-2 sm:py-3 flex items-center gap-2 sm:gap-4 overflow-hidden relative">
+    // --- Changed to the dark blue/gold theme ---
+    <div className="bg-blue-950 text-slate-200 py-3 sm:py-4 flex items-center gap-4 sm:gap-6 overflow-hidden relative">
       {/* Responsive Logo */}
       <a
-        href="https://www.zoho.com/en-in/startups/founders-registration.html?src=ksrceneo&zredirect=f" 
+        href="https://www.zoho.com/en-in/startups/founders-registration.html?src=ksrceneo&zredirect=f"
         target="_blank"
         rel="noopener noreferrer"
+        className="flex-shrink-0 ml-4 sm:ml-6"
       >
-      
-      <img
-        src={logo}
-        alt="Logo"
-        className="w-16 sm:w-32 h-auto ml-2 sm:ml-4 flex-shrink-0"
-      />
+        <img
+          src={logo}
+          alt="Logo"
+          // --- Adjusted size slightly for balance ---
+          className="w-20 sm:w-28 h-auto"
+        />
       </a>
+
+      {/* --- Added a static gold star icon --- */}
+      <FaStar className="text-amber-500 text-2xl sm:text-3xl flex-shrink-0" />
+
       {/* Scrolling Text */}
       <div className="overflow-hidden w-full relative">
-        <div className="flex animate-scroll whitespace-nowrap font-semibold text-xs sm:text-lg">
-          <span className="mr-16">{text}</span>
-          <span className="mr-16">{text}</span>
-          <span className="mr-16">{text}</span>
+        <div className="animate-scroll flex whitespace-nowrap font-semibold text-sm sm:text-lg">
+          {/* --- Using two spans for a perfect loop --- */}
+          <span className="mr-16">{textContent}</span>
+          <span className="mr-16" aria-hidden="true">
+            {textContent}
+          </span>
         </div>
       </div>
 
@@ -41,8 +59,13 @@ export default function FooterTicker() {
 
         .animate-scroll {
           display: flex;
-          animation: scroll 30s linear infinite;
+          /* --- Slowed down animation and added hover-pause --- */
+          animation: scroll 40s linear infinite;
           width: max-content;
+        }
+
+        .animate-scroll:hover {
+          animation-play-state: paused;
         }
       `}</style>
     </div>

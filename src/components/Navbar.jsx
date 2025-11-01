@@ -2,6 +2,58 @@ import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../photos/KSRCE NEO logo.jpg";
+import { FaArrowRight } from "react-icons/fa"; // Added for button consistency
+
+/**
+ * A custom animated hamburger menu button.
+ * It morphs between a "hamburger" and a "cross" icon.
+ */
+const MenuButton = ({ isOpen, onClick, className = "" }) => {
+  const lineVariants = {
+    open: (custom) => ({
+      rotate: custom.rotate,
+      y: custom.y,
+    }),
+    closed: {
+      rotate: 0,
+      y: 0,
+    },
+  };
+
+  return (
+    <motion.button
+      whileTap={{ scale: 0.95 }}
+      className={`sm:hidden text-blue-950 text-3xl focus:outline-none ${className}`}
+      onClick={onClick}
+      aria-label="Toggle Menu"
+    >
+      <div className="w-6 h-6 flex flex-col justify-around relative">
+        <motion.div
+          className="w-full h-0.5 bg-blue-950 rounded-full"
+          variants={lineVariants}
+          custom={{ rotate: 45, y: 10.5 }}
+          animate={isOpen ? "open" : "closed"}
+          transition={{ type: "spring", stiffness: 260, damping: 20 }}
+          style={{ originX: "0.5px", originY: "0.5px" }}
+        />
+        <motion.div
+          className="w-full h-0.5 bg-blue-950 rounded-full"
+          variants={{ open: { opacity: 0 }, closed: { opacity: 1 } }}
+          animate={isOpen ? "open" : "closed"}
+          transition={{ duration: 0.1 }}
+        />
+        <motion.div
+          className="w-full h-0.5 bg-blue-950 rounded-full"
+          variants={lineVariants}
+          custom={{ rotate: -45, y: -10.5 }}
+          animate={isOpen ? "open" : "closed"}
+          transition={{ type: "spring", stiffness: 260, damping: 20 }}
+          style={{ originX: "0.5px", originY: "0.5px" }}
+        />
+      </div>
+    </motion.button>
+  );
+};
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,6 +65,11 @@ const Header = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
   const links = [
     { name: "Home", path: "/" },
@@ -28,15 +85,22 @@ const Header = () => {
     visible: { y: 0, opacity: 1, transition: { duration: 0.6, ease: "easeOut" } },
   };
 
-  const mobileNavVariants = {
-    hidden: { opacity: 0, scale: 0.95, y: -20 },
+  // --- New variants for staggered mobile menu ---
+  const mobileMenuContainerVariants = {
+    hidden: { opacity: 0 },
     visible: {
       opacity: 1,
-      scale: 1,
-      y: 0,
-      transition: { type: "spring", stiffness: 120, damping: 15 },
+      transition: {
+        staggerChildren: 0.05, // Each link animates in 0.05s after the previous
+      },
     },
-    exit: { opacity: 0, scale: 0.95, y: -20, transition: { duration: 0.3 } },
+    exit: { opacity: 0 },
+  };
+
+  const mobileMenuItemVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+    exit: { opacity: 0, x: -20 },
   };
 
   return (
@@ -44,93 +108,115 @@ const Header = () => {
       initial="hidden"
       animate="visible"
       variants={navVariants}
+      // --- Updated with new theme colors ---
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "backdrop-blur-md shadow-lg bg-white/80" : "bg-white"
+        isScrolled
+          ? "backdrop-blur-md shadow-lg bg-white/90"
+          : "bg-slate-50" // Use the "light white" bg
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 sm:px-6 py-4">
         {/* Logo */}
-        <motion.div whileHover={{ scale: 1.08, rotate: -1 }}>
+        <motion.div whileHover={{ scale: 1.05 }}>
           <Link to="/">
             <img
               src={logo}
               alt="KSRCE NEO Logo"
-              className="h-9 sm:h-12 object-contain"
+              className="h-9 sm:h-12 object-contain" // Kept size, it's good
             />
           </Link>
         </motion.div>
 
-        {/* Nav + Apply Now for tablet & desktop */}
+        {/* Nav + Apply Now for desktop */}
         <div className="hidden sm:flex items-center gap-6">
-          {links.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className={`text-sky-800 hover:text-sky-600 transition-colors ${
-                location.pathname === link.path
-                  ? "text-sky-700 font-semibold"
-                  : ""
-              }`}
-            >
-              {link.name}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const isActive = location.pathname === link.path;
+            return (
+              <motion.div key={link.name} className="relative">
+                <Link
+                  to={link.path}
+                  className={`relative font-medium text-blue-950 transition-colors ${
+                    isActive ? "text-amber-500" : "hover:text-amber-500"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+                {/* --- This is the "magic" underline --- */}
+                {isActive && (
+                  <motion.div
+                    className="absolute bottom-[-6px] left-0 right-0 h-0.5 bg-amber-500"
+                    layoutId="underline" // This animates it between links
+                    transition={{
+                      type: "spring",
+                      stiffness: 300,
+                      damping: 25,
+                    }}
+                  />
+                )}
+              </motion.div>
+            );
+          })}
+          {/* --- Updated "Apply Now" button to match Hero theme --- */}
           <Link to="/getinvolved">
-            <button className="bg-sky-600 hover:bg-sky-700 text-white px-5 py-2 rounded-full shadow transition">
-              <b>Apply Now</b>
-            </button>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-blue-900 hover:bg-blue-800 text-white px-5 py-2 rounded-full shadow-md 
+                         transition-all flex items-center gap-2 font-semibold"
+            >
+              Apply Now <FaArrowRight size={12} />
+            </motion.button>
           </Link>
         </div>
 
-        {/* Hamburger for mobile (<640px) */}
-        <motion.button
-          whileTap={{ scale: 0.9 }}
-          className="sm:hidden text-sky-700 text-3xl focus:outline-none"
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle Menu"
-        >
-          {menuOpen ? "✕" : "☰"}
-        </motion.button>
+        {/* --- Replaced text with animated MenuButton component --- */}
+        <MenuButton isOpen={menuOpen} onClick={() => setMenuOpen(!menuOpen)} />
       </div>
 
       {/* Mobile menu */}
       <AnimatePresence>
         {menuOpen && (
           <motion.nav
-            variants={mobileNavVariants}
+            variants={mobileMenuContainerVariants} // Stagger container
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="sm:hidden bg-white/95 backdrop-blur text-sky-900 px-6 py-4 space-y-3 shadow-inner"
+            className="sm:hidden bg-white shadow-lg" // Solid white for clarity
           >
-            {links.map((link) => (
-              <motion.div
-                key={link.name}
-                whileHover={{ scale: 1.03, x: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <Link
-                  to={link.path}
-                  className={`block text-base py-1 ${
-                    location.pathname === link.path
-                      ? "text-sky-700 font-semibold"
-                      : ""
-                  }`}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              </motion.div>
-            ))}
+            <div className="px-6 py-4 space-y-3">
+              {links.map((link) => {
+                const isActive = location.pathname === link.path;
+                return (
+                  // --- Each item now staggers in ---
+                  <motion.div
+                    key={link.name}
+                    variants={mobileMenuItemVariants}
+                  >
+                    <Link
+                      to={link.path}
+                      className={`block text-lg font-medium transition-colors ${
+                        isActive
+                          ? "text-amber-500" // Gold for active
+                          : "text-blue-950 hover:text-amber-500" // Dark blue for inactive
+                      }`}
+                      onClick={() => setMenuOpen(false)} // This is good, kept it
+                    >
+                      {link.name}
+                    </Link>
+                  </motion.div>
+                );
+              })}
 
-            <Link to="/getinvolved">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                className="bg-sky-600 w-full text-white py-2 rounded-full shadow hover:bg-sky-700"
-              >
-                <b>Apply Now</b>
-              </motion.button>
-            </Link>
+              <Link to="/getinvolved">
+                <motion.button
+                  variants={mobileMenuItemVariants}
+                  className="bg-blue-900 w-full text-white py-3 rounded-lg shadow 
+                             hover:bg-blue-800 font-semibold flex items-center justify-center gap-2"
+                >
+                  Apply Now <FaArrowRight size={12} />
+                </motion.button>
+              </Link>
+            </div>
           </motion.nav>
         )}
       </AnimatePresence>

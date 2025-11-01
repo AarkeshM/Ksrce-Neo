@@ -1,8 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { motion } from "framer-motion";
-import AOS from "aos";
-import "aos/dist/aos.css";
 
+// --- Added react-icons for the "Upcoming Events" section ---
+import {
+  FaCalendarCheck,
+  FaCode,
+  FaChalkboardTeacher,
+  FaUsers,
+  FaRocket,
+  FaBullhorn,
+} from "react-icons/fa";
+
+// Image imports (no change)
 import acite from "../photos/aicte.jpg";
 import puthulir from "../photos/puthulir.jpg";
 import smartcard from "../photos/smartcard.jpg";
@@ -20,6 +29,7 @@ import meeting from "../photos/meeting.jpg";
 import msme from "../photos/msme.jpg";
 import team from "../photos/team.jpg";
 
+// Past events data (no change)
 const events = [
   { title: "AICTE IDEA Lab Selection", date: "2025", image: acite, description: "KSRCE selected by AICTE for ₹90 Lakhs grant to establish IDEA Lab." },
   { title: "Puthulir Award & AUSEC Student Chapter Launch", date: "2025", image: puthulir, description: "Honored with Puthulir Award and launched aerospace student chapter." },
@@ -39,93 +49,182 @@ const events = [
   { title: "MSME Innovative Scheme Grant", date: "2025", image: msme, description: "KSRCE recognized as Host Institute; students won ₹15 Lakhs grant." }
 ];
 
-const Upcomingevents = [
-  { title: "Idea Clinic", desc: "Compete and innovate with cutting-edge tech." },
-  { title: "Hackathon", desc: "Solve real-world problems with creativity." },
-  { title: "Boot Camp", desc: "Turn your idea into a solid business model." },
-  { title: "Founder Talk Series", desc: "Hear from successful founders and leaders." },
-  { title: "Hatch & Launch Series", desc: "Understand patents, trademarks, and more." },
-  { title: "Demo Days & Pitch Events", desc: "Showcase your startup to investors & mentors." }
+// --- Updated Upcoming Events data with new icons and mock dates ---
+const UpcomingEvents = [
+  {
+    title: "Idea Clinic",
+    desc: "Compete and innovate with cutting-edge tech.",
+    date: "Dec 10, 2025",
+    icon: <FaCalendarCheck />,
+  },
+  {
+    title: "Hackathon",
+    desc: "Solve real-world problems with creativity.",
+    date: "Dec 15, 2025",
+    icon: <FaCode />,
+  },
+  {
+    title: "Boot Camp",
+    desc: "Turn your idea into a solid business model.",
+    date: "Jan 05, 2026",
+    icon: <FaChalkboardTeacher />,
+  },
+  {
+    title: "Founder Talk Series",
+    desc: "Hear from successful founders and leaders.",
+    date: "Jan 12, 2026",
+    icon: <FaUsers />,
+  },
+  {
+    title: "Hatch & Launch Series",
+    desc: "Understand patents, trademarks, and more.",
+    date: "Jan 20, 2026",
+    icon: <FaRocket />,
+  },
+  {
+    title: "Demo Days & Pitch Events",
+    desc: "Showcase your startup to investors & mentors.",
+    date: "Feb 01, 2026",
+    icon: <FaBullhorn />,
+  },
 ];
 
-const Gallery = () => {
-  useEffect(() => {
-    AOS.init({ duration: 800, once: true });
-  }, []);
+// --- Animation variant for staggering cards ---
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.1, // Staggered delay
+      duration: 0.5,
+      ease: "easeOut",
+    },
+  }),
+};
 
+// --- Animation variant for the main page titles ---
+const fadeInUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
+const Events = () => {
+  // Removed AOS.init()
   return (
-    <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 px-4 sm:px-6 lg:px-10 mt-5 py-16">
+    // --- Updated background and padding ---
+    <div className="bg-slate-50 px-4 sm:px-6 lg:px-10 mt-16 py-20">
       {/* Upcoming Events */}
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-sky-800 mb-10">
-        Upcoming Events
-      </h2>
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="text-center"
+      >
+        <h2 className="text-4xl font-bold text-blue-950 mb-4">
+          Upcoming Events
+        </h2>
+        {/* --- Added gold underline --- */}
+        <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </motion.div>
 
-      <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
-        {Upcomingevents.map((event, index) => (
+      <div className="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8 my-16">
+        {UpcomingEvents.map((event, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ delay: index * 0.1, duration: 0.3 }}
-            whileHover={{ y: -5 }}
-            className="bg-white border border-sky-300 p-5 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300"
+            custom={index}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            whileHover={{ y: -8 }} // --- Consistent lift animation ---
+            // --- Applied new card styling with blue/gold border ---
+            className="bg-white p-8 rounded-xl shadow-lg transition-all 
+                       duration-300 border-b-8 border-blue-900 
+                       hover:border-amber-500 text-left"
           >
-            <h3 className="text-lg font-bold text-sky-900 mb-1">{event.title}</h3>
-            <p className="text-sm text-sky-700">{event.desc}</p>
-            <button className="mt-4 inline-flex items-center text-xs sm:text-sm font-medium text-white bg-gradient-to-r from-sky-600 to-blue-700 hover:from-sky-700 hover:to-blue-800 px-4 py-2 rounded-full shadow transition">
-              View Full Details
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2}
-                stroke="currentColor"
-                className="w-4 h-4 ml-2"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-              </svg>
-            </button>
+            {/* --- Styled the new icon in gold --- */}
+            <div className="text-5xl mb-4 text-amber-500">{event.icon}</div>
+            {/* --- Added new date element in gold --- */}
+            <p className="text-sm font-semibold text-amber-500 mb-2">
+              {event.date}
+            </p>
+            {/* --- Themed card title --- */}
+            <h3 className="text-xl font-bold text-blue-950 mb-2">
+              {event.title}
+            </h3>
+            {/* --- Themed card description --- */}
+            <p className="text-sm text-slate-600">{event.desc}</p>
+            {/* Removed button for a cleaner, consistent look */}
           </motion.div>
         ))}
       </div>
 
       {/* Past Events */}
-      <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-sky-800 mb-12">
-        Past Events
-      </h2>
+      <motion.div
+        variants={fadeInUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="text-center"
+      >
+        <h2 className="text-4xl font-bold text-blue-950 mb-4">
+          Past Events
+        </h2>
+        {/* --- Added gold underline --- */}
+        <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full"></div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-7xl mx-auto mt-16">
         {events.map((event, index) => (
-          <div
+          // --- Replaced AOS with framer-motion ---
+          <motion.div
             key={index}
-            data-aos="fade-up"
-            className="bg-white border border-sky-300 rounded-xl shadow hover:shadow-lg transform hover:-translate-y-1 transition-all duration-300"
+            custom={index}
+            variants={cardVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            whileHover={{ y: -8 }} // --- Consistent lift animation ---
+            className="bg-white border border-slate-200 rounded-xl shadow-lg 
+                       transition-all duration-300 overflow-hidden group"
           >
+            {/* --- Modernized image container --- */}
             <div
-              className="flex justify-center items-center bg-white p-4"
-              style={{ minHeight: "200px" }}
+              className="aspect-video w-full overflow-hidden bg-slate-100"
             >
               <img
                 src={event.image}
                 alt={event.title}
-                className="object-contain max-h-56 w-full"
+                // --- Added zoom-on-hover effect ---
+                className="object-cover w-full h-full transition-transform 
+                           duration-300 group-hover:scale-105"
               />
             </div>
             <div className="p-5">
-              <h3 className="text-lg font-semibold text-sky-900 mb-1">
+              {/* --- Themed card title --- */}
+              <h3 className="text-lg font-semibold text-blue-950 mb-1">
                 {event.title}
               </h3>
-              <p className="text-xs text-sky-500 mb-1">{event.date}</p>
-              <p className="text-sm text-sky-700 leading-relaxed">
+              {/* --- Themed date in gold --- */}
+              <p className="text-xs text-amber-500 font-semibold mb-2">
+                {event.date}
+              </p>
+              {/* --- Themed description --- */}
+              <p className="text-sm text-slate-600 leading-relaxed">
                 {event.description}
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </div>
   );
 };
 
-export default Gallery;
+export default Events;
