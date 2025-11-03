@@ -9,7 +9,6 @@ import heroMockup4 from "../assets/hero3.jpg";
 import heroMockup5 from "../assets/hero4.jpg";
 import "../index.css";
 
-// --- I've added react-icons for the new design ---
 import {
   FaRocket,
   FaUserGraduate,
@@ -44,9 +43,8 @@ const Hero = () => {
     return () => clearInterval(timer.current);
   }, []);
 
-  // --- Added icons to the data ---
   const highlights = [
-    { title: "Startup Onboarded", value: "6+", icon: <FaRocket size={30} /> },
+    { title: "Startup Onboarded", value: "12+", icon: <FaRocket size={30} /> },
     {
       title: "Student Innovators",
       value: "20+",

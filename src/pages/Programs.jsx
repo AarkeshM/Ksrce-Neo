@@ -46,7 +46,7 @@ const events = [
   { title: "Founder's Bench 1.0", date: "July 2025", image: founder, description: "Entrepreneurs shared startup stories to inspire students." },
   { title: "Technical Advisory Committee Meeting", date: "July 2025", image: meeting, description: "Experts gathered to guide the direction of the innovation ecosystem." },
   { title: "Neo Spark Innovation Club Launch", date: "2025", image: team, description: "Student-led club launched to promote problem-solving and collaboration." },
-  { title: "MSME Innovative Scheme Grant", date: "2025", image: msme, description: "KSRCE recognized as Host Institute; students won ₹15 Lakhs grant." }
+  { title: "MSME Hackathon", date: "2025", image: msme, description: "KSRCE recognized as Host Institute; students won ₹15 Lakhs grant." }
 ];
 
 // --- Updated Upcoming Events data with new icons and mock dates ---
@@ -54,42 +54,35 @@ const UpcomingEvents = [
   {
     title: "Idea Clinic",
     desc: "Compete and innovate with cutting-edge tech.",
-    date: "Dec 10, 2025",
     icon: <FaCalendarCheck />,
   },
   {
     title: "Hackathon",
     desc: "Solve real-world problems with creativity.",
-    date: "Dec 15, 2025",
     icon: <FaCode />,
   },
   {
     title: "Boot Camp",
     desc: "Turn your idea into a solid business model.",
-    date: "Jan 05, 2026",
     icon: <FaChalkboardTeacher />,
   },
   {
     title: "Founder Talk Series",
     desc: "Hear from successful founders and leaders.",
-    date: "Jan 12, 2026",
     icon: <FaUsers />,
   },
   {
     title: "Hatch & Launch Series",
     desc: "Understand patents, trademarks, and more.",
-    date: "Jan 20, 2026",
     icon: <FaRocket />,
   },
   {
     title: "Demo Days & Pitch Events",
     desc: "Showcase your startup to investors & mentors.",
-    date: "Feb 01, 2026",
     icon: <FaBullhorn />,
   },
 ];
 
-// --- Animation variant for staggering cards ---
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
   visible: (i) => ({

@@ -1,10 +1,7 @@
-// src/components/Facilities.jsx
 import React from "react";
 import { motion } from "framer-motion";
-// --- Added icons for the new design ---
-import { FaUsers, FaArrowRight, FaRocket } from "react-icons/fa";
+import { FaUsers, FaRocket } from "react-icons/fa";
 
-// Image imports (no change)
 import fablab from "../photos/fab-lab.jpg";
 import incubation1 from "../photos/incubation space-1.jpg";
 import meeting from "../photos/meeting hall.jpg";
@@ -143,20 +140,6 @@ const Facilities = () => (
               </span>
             </div>
 
-            <div className="w-full flex justify-center md:justify-start">
-              {/* --- Replaced with consistent themed button --- */}
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-3 
-                             rounded-full shadow-md transition-all flex 
-                             items-center gap-2 font-semibold"
-                >
-                  Book Now <FaArrowRight size={12} />
-                </motion.button>
-              </a>
-            </div>
           </div>
 
           {/* RIGHT/LEFT: Image */}

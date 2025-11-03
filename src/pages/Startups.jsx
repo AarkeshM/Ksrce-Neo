@@ -28,12 +28,12 @@ import vdo2 from "../photos/vdo 2.mp4";
 const successStories = [
   {
     title: "Azhizen Solutions (OPC) Private Ltd",
-    desc: "At KSRCE NEO, innovation begins with students, ideas, and the right ecosystem. Our StartupSpotlight features Azhizen Solutions, founded by Mr. Bharathkumar Ramachandiran and team, who turned their vision into reality through incubation support. From idea validation and prototype development to investor pitching and scaling strategies, their journey reflects true innovation. Today, they have launched their market viable product ‘Easemilker’ and secured grants, proving that NEO is indeed a launchpad for entrepreneurial success.",
+    desc: "At KSRCE NEO, innovation starts with students and ideas. Our StartupSpotlight features Azhizen Solutions, founded by Mr. Bharathkumar Ramachandiran and team, who transformed their vision into reality with NEO’s incubation support. From idea to market, their product ‘Easemilker’ has launched successfully and earned grants — a true example of NEO’s role as a launchpad for entrepreneurs.",
     video: vdo1,
   },
   {
     title: "NexGen Nextopia Pvt Ltd",
-    desc: "NexGen Nextopia is an innovation-driven ecosystem that bridges education and industry, empowering students and entrepreneurs to transform ideas into impactful ventures. With expertise in IoT, AI & ML, web development, AR/VR, and digital marketing, it provides end-to-end support from ideation to execution. Through workshops, mentoring, prototype development, and investor pitching, NexGen Nextopia nurtures innovation and entrepreneurial growth. It is a launchpad for creating future-ready products, careers, and companies.",
+    desc: "NexGen Nextopia is an innovation-driven ecosystem connecting education and industry to turn ideas into impactful ventures. With expertise in IoT, AI/ML, web development, AR/VR, and digital marketing, it offers complete support from ideation to execution through workshops, mentoring, and investor pitching—empowering students and entrepreneurs to build future-ready products and careers.",
     video: vdo2,
   },
 ];

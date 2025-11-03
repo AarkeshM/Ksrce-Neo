@@ -1,21 +1,18 @@
 import React from "react";
 import { motion } from "framer-motion";
-// --- Added new icons for the redesign ---
 import {
   FaLinkedin,
   FaLightbulb,
   FaUsers,
   FaCompass,
   FaStar,
-  FaRocket,
 } from "react-icons/fa";
 
-// Image imports (no change)
 import venkatesan from "../photos/venkatesan 1.jpg";
 import lakshmi from "../photos/lakshmi.jpg";
 import murugesan from "../photos/murugesan.jpg";
 import pavithran from "../photos/pavithran.jpg";
-import harshini from "../photos/harshini.jpg";
+import harshini from "../photos/harshini1.jpg";
 
 const teamMembers = [
   {
@@ -69,19 +66,7 @@ const coreValues = [
   },
 ];
 
-// --- Formatted Focus Sectors as an array for the new list design ---
-const focusSectors = [
-  "Artificial Intelligence & Data Science",
-  "IoT & Embedded Systems",
-  "Green Energy & Sustainable Tech",
-  "Smart Agriculture & PoultryTech",
-  "HealthTech & Biomedical Devices",
-  "EdTech & Rural Innovation",
-  "Social Entrepreneurship",
-  "Smart Mobility & EVs",
-];
 
-// Animation variant (no change)
 const fadeInUp = (delay = 0) => ({
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -163,19 +148,6 @@ const AboutUs = () => {
             models across key domains including AI/ML, IoT, robotics, agri-tech,
             sustainability, and social impact.
           </p>
-
-          <h3 className="text-3xl font-bold text-blue-950 mb-6">
-            Focus Sectors
-          </h3>
-          {/* --- Replaced paragraph with a clean icon list --- */}
-          <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-3">
-            {focusSectors.map((sector) => (
-              <li key={sector} className="flex items-center text-slate-600">
-                <FaRocket className="text-amber-500 mr-3 flex-shrink-0" />
-                <span>{sector}</span>
-              </li>
-            ))}
-          </ul>
         </motion.div>
 
         {/* Team Section */}
