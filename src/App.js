@@ -10,8 +10,9 @@ import Startups from "./pages/Startups";
 import GetInvolved from "./pages/GetInvolved";
 import Facilities from "./pages/Facilities";
 import FooterTicker from "./pages/FooterTicker";
-
-
+import Contact from "./pages/Contactus";
+import OurTeam from "./pages/OurTeam";
+import SucessStories from "./pages/SuccessStories";
 
 const App = () => {
   return (
@@ -29,6 +30,9 @@ const App = () => {
             <Route path="/startups" element={<Startups />} />
             <Route path="/getinvolved" element={<GetInvolved />} />
             <Route path="/facilities" element={<Facilities />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/ourteam" element={<OurTeam />} />
+            <Route path="/successstories" element={<SucessStories />} />  
           </Routes>
         </main>
         <FooterTicker />

@@ -11,9 +11,6 @@ import {
   FaBullhorn,
 } from "react-icons/fa";
 
-// Image imports (no change)
-import acite from "../photos/aicte.jpg";
-import puthulir from "../photos/puthulir.jpg";
 import smartcard from "../photos/smartcard.jpg";
 import onboard from "../photos/onboard.jpg";
 import bala from "../photos/visit.jpg";
@@ -31,25 +28,22 @@ import team from "../photos/team.jpg";
 
 // Past events data (no change)
 const events = [
-  { title: "AICTE IDEA Lab Selection", date: "2025", image: acite, description: "KSRCE selected by AICTE for ₹90 Lakhs grant to establish IDEA Lab." },
-  { title: "Puthulir Award & AUSEC Student Chapter Launch", date: "2025", image: puthulir, description: "Honored with Puthulir Award and launched aerospace student chapter." },
+  { title: "Grand Inauguration of KSRCE NEO-Incubation Center", date: "April 2025", image: neo, description: "Inauguration of KSRCE NEO Incubation Centre with StartupTN leadership." },
+  { title: "Neo Spark Innovation Club Launch", date: "2025", image: team, description: "Student-led club launched to promote problem-solving and collaboration." },
+  { title: "Hatch & Launch at KSRCE NEO", date: "2025", image: hatch, description: "Student startup AZHIZEN officially launched under KSRCE NEO." },
   { title: "KSRCE Students Receive StartupTN Start-Step Smart Card", date: "Nov 2024", image: smartcard, description: "12 student teams received startup smart cards to access support services." },
   { title: "Student Incubatees Onboarded under KSRCE NEO", date: "2025", image: onboard, description: "Student startups onboarded under KSRCE NEO for innovation incubation." },
   { title: "Dr. Balagurusamy Visits NEXGEN NEXTOPIA at KSRCE", date: "2025", image: bala, description: "Appreciated efforts of alumni-led startup NEXGEN NEXTOPIA at KSRCE." },
-  { title: "Tech Ignite Bootcamp-Building Digital Skills at KSRCE", date: "March 2025", image: boot, description: "Hands-on training on building websites & apps with digital impact." },
-  { title: "PRASKLA FUTURE X 2025-Hackathon at KSRCE", date: "April 2025", image: hack, description: "Students built apps in real-time during high-energy coding competition." },
-  { title: "Grand Inauguration of KSRCE NEO-Incubation Center", date: "April 2025", image: neo, description: "Inauguration of KSRCE NEO Incubation Centre with StartupTN leadership." },
-  { title: "Hatch & Launch at KSRCE NEO", date: "2025", image: hatch, description: "Student startup AZHIZEN officially launched under KSRCE NEO." },
   { title: "From Vision to Venture: Azhizen's Launch at KSRCE NEO", date: "2025", image: azhizen, description: "Founder Bharathkumar launched his biomedical startup incubated at KSRCE." },
   { title: "Inspiring Young Minds", date: "2025", image: student, description: "11th standard students visited the incubation center to explore innovation." },
   { title: "KSRCE NEO Collaborates with Zoho", date: "2025", image: zoho, description: "Startups received ₹1.86 Lakhs Zoho credits for business tool access." },
   { title: "Founder's Bench 1.0", date: "July 2025", image: founder, description: "Entrepreneurs shared startup stories to inspire students." },
   { title: "Technical Advisory Committee Meeting", date: "July 2025", image: meeting, description: "Experts gathered to guide the direction of the innovation ecosystem." },
-  { title: "Neo Spark Innovation Club Launch", date: "2025", image: team, description: "Student-led club launched to promote problem-solving and collaboration." },
+  { title: "Tech Ignite Bootcamp-Building Digital Skills at KSRCE", date: "March 2025", image: boot, description: "Hands-on training on building websites & apps with digital impact." },
+  { title: "PRASKLA FUTURE X 2025-Hackathon at KSRCE", date: "April 2025", image: hack, description: "Students built apps in real-time during high-energy coding competition." },
   { title: "MSME Hackathon", date: "2025", image: msme, description: "KSRCE recognized as Host Institute; students won ₹15 Lakhs grant." }
 ];
 
-// --- Updated Upcoming Events data with new icons and mock dates ---
 const UpcomingEvents = [
   {
     title: "Idea Clinic",

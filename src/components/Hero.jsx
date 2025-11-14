@@ -32,7 +32,7 @@ const images = [
 const Hero = () => {
   const [current, setCurrent] = useState(0);
   const [openIndex, setOpenIndex] = useState(null);
-  const [direction, setDirection] = useState(1);
+  const [, setDirection] = useState(1);
   const timer = useRef();
 
   useEffect(() => {
@@ -193,43 +193,36 @@ const Hero = () => {
                      bg-blue-950 p-2 border-4 border-amber-400"
           style={{ perspective: 1200 }}
         >
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.img
-              key={current}
-              src={images[current]}
-              initial={{
-                opacity: 0,
-                rotateY: direction === 1 ? 90 : -90,
-                rotateX: 20 * direction,
-                scale: 0.8,
-                z: -100,
-              }}
-              animate={{
-                opacity: 1,
-                rotateY: 0,
-                rotateX: 0,
-                scale: 1,
-                z: 0,
-              }}
-              exit={{
-                opacity: 0,
-                rotateY: direction === 1 ? -90 : 90,
-                rotateX: -20 * direction,
-                scale: 0.8,
-                z: -100,
-              }}
-              transition={{
-                duration: 0.8,
-                ease: [0.77, 0.2, 0.15, 1.01],
-              }}
-              // --- Rounded the image to fit inside the new border/matte ---
-              className="w-full h-full object-cover rounded-lg"
-              style={{
-                backfaceVisibility: "hidden",
-                boxShadow: "0 10px 30px rgba(0,0,0,.25)",
-              }}
-            />
-          </AnimatePresence>
+             <AnimatePresence mode="wait" initial={false}>
+  <motion.img
+    key={current}
+    src={images[current]}
+    initial={{
+      opacity: 0,
+      y: 80,
+      rotate: -5,
+    }}
+    animate={{
+      opacity: 1,
+      y: 0,
+      rotate: 0,
+    }}
+    exit={{
+      opacity: 0,
+      y: -80,
+      rotate: 5,
+    }}
+    transition={{
+      duration: 0.6,
+      ease: [0.45,0,0.55,1],
+    }}
+    className="w-full h-full object-cover rounded-lg"
+    style={{
+      backfaceVisibility: "hidden",
+      boxShadow: "0 10px 30px rgba(0,0,0,.25)",
+    }}
+  />
+</AnimatePresence>
         </div>
       </div>
 
@@ -343,18 +336,18 @@ const Hero = () => {
                     <div className="border-t border-slate-200 pt-4 space-y-2">
                       {Array.isArray(faq.answer)
                         ? faq.answer.map((line, idx) => (
-                            <p key={idx} className="flex">
-                              {/* --- Replaced • with a "gold" accent icon --- */}
-                              {line.trim().startsWith("•") ? (
-                                <span className="mr-2 text-amber-500 pt-1">
-                                  <FaRocket size={10} />
-                                </span>
-                              ) : null}
-                              <span className="flex-1">
-                                {line.replace("•", "").trim()}
+                          <p key={idx} className="flex">
+                            {/* --- Replaced • with a "gold" accent icon --- */}
+                            {line.trim().startsWith("•") ? (
+                              <span className="mr-2 text-amber-500 pt-1">
+                                <FaRocket size={10} />
                               </span>
-                            </p>
-                          ))
+                            ) : null}
+                            <span className="flex-1">
+                              {line.replace("•", "").trim()}
+                            </span>
+                          </p>
+                        ))
                         : <p>{faq.answer}</p>}
                     </div>
                   </motion.div>

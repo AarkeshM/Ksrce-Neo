@@ -1,11 +1,8 @@
-// src/components/Startups.jsx
 import React from "react";
-import { motion } from "framer-motion"; // Added framer-motion
-// --- Added new icons ---
+import { motion } from "framer-motion"; 
+
 import {
   FaArrowRight,
-  FaStar,
-  FaRocket,
   FaRobot,
   FaUsers,
   FaTractor,
@@ -14,7 +11,6 @@ import {
   FaDatabase,
 } from "react-icons/fa";
 
-// Video and Image imports (no change)
 import nexgen from "../photos/nexgen.png";
 import neura from "../photos/neura.png";
 import praskla from "../photos/praskla.jpg";
@@ -24,7 +20,6 @@ import inzovate from "../photos/inzovate.jpg";
 import vdo1 from "../photos/vdo1.mp4";
 import vdo2 from "../photos/vdo 2.mp4";
 
-// Data (no change)
 const successStories = [
   {
     title: "Azhizen Solutions (OPC) Private Ltd",
@@ -38,7 +33,6 @@ const successStories = [
   },
 ];
 
-// --- Added 'icon' property to each startup ---
 const currentStartups = [
   {
     title: "NeuraAI Solutions Private Ltd",
@@ -78,7 +72,6 @@ const currentStartups = [
   },
 ];
 
-// --- Added animation variants ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
   visible: {
@@ -94,7 +87,7 @@ const cardVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.1, // Staggered delay
+      delay: i * 0.1, 
       duration: 0.5,
       ease: "easeOut",
     },
@@ -103,8 +96,7 @@ const cardVariants = {
 
 export default function Startups() {
   return (
-    // --- Updated background and padding ---
-    <div className="bg-slate-50 mt-16 pt-20 pb-16 min-h-screen text-blue-950">
+    <div className="bg-slate-50 mt-8 pt-20 pb-16 min-h-screen text-blue-950">
       {/* Header */}
       <motion.div
         variants={fadeInUp}
@@ -113,86 +105,23 @@ export default function Startups() {
         viewport={{ once: true }}
         className="text-center mb-16"
       >
-        {/* --- Replaced emoji header with themed title --- */}
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-950 mb-4">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-blue-950 mb-2">
           Our Startups
         </h1>
-        {/* --- Added gold underline --- */}
         <div className="w-24 h-1 bg-amber-500 mx-auto rounded-full"></div>
       </motion.div>
 
-      {/* Success Stories */}
-      {/* --- Adjusted padding for mobile --- */}
-      <section className="px-4 sm:px-6 md:px-12 mb-20">
-        <motion.h2
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          className="text-3xl font-bold mb-12 text-center text-blue-950 flex 
-                     items-center justify-center gap-3"
-        >
-          <FaStar className="text-amber-500" /> {/* --- Added Icon --- */}
-          Success Stories
-        </motion.h2>
-
-        {/* --- Adjusted gap for mobile --- */}
-        <div className="grid gap-6 sm:gap-8 md:grid-cols-2 max-w-5xl mx-auto">
-          {successStories.map((s, i) => (
-            <motion.div
-              key={i}
-              custom={i}
-              variants={cardVariants}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, amount: 0.2 }}
-              whileHover={{ y: -8 }} // --- Replaced translate with lift ---
-              // --- Updated card theme: bg-white, shadow-lg ---
-              className="group bg-white rounded-xl overflow-hidden shadow-lg 
-                         border border-slate-200 transition-all duration-300"
-            >
-              {/* Video section */}
-              <div className="overflow-hidden bg-black aspect-video">
-                <video
-                  src={s.video}
-                  controls
-                  // --- CHANGED: 'object-cover' to 'object-contain' to show full video ---
-                  className="w-full h-full object-contain transition-transform 
-                             duration-500 group-hover:scale-105"
-                />
-              </div>
-
-              {/* Text section */}
-              <div className="p-6">
-                <h3 className="font-bold text-xl text-blue-950 mb-3">
-                  {s.title}
-                </h3>
-                {/* --- Updated text color --- */}
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  {s.desc}
-                </p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* Current Startups */}
-      {/* --- Adjusted padding for mobile --- */}
       <section className="px-4 sm:px-6 md:px-12">
         <motion.h2
           variants={fadeInUp}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="text-3xl font-bold mb-12 text-center text-blue-950 flex 
+          className="text-3xl font-bold mb-2 text-center text-blue-950 flex 
                      items-center justify-center gap-3"
         >
-          <FaRocket className="text-amber-500" /> {/* --- Added Icon --- */}
-          Current Startups
         </motion.h2>
 
-        {/* --- Adjusted gap for mobile --- */}
         <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
           {currentStartups.map((s, i) => (
             <motion.div
@@ -202,13 +131,12 @@ export default function Startups() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              whileHover={{ y: -8 }} // --- Replaced translate with lift ---
-              // --- CHANGED: Applied the blue/gold border theme ---
+              whileHover={{ y: -8 }} 
               className="group bg-white rounded-xl shadow-lg transition-all 
                          duration-300 text-left border-b-8 
                          border-blue-900 hover:border-amber-500"
             >
-              {/* --- Made logo container larger --- */}
+
               <div className="h-48 flex items-center justify-center p-6">
                 <img
                   src={s.img}
@@ -217,7 +145,7 @@ export default function Startups() {
                              duration-500 group-hover:scale-105"
                 />
               </div>
-              {/* --- CHANGED: Removed the 'border-t', card is now text-left --- */}
+
               <div className="p-6">
                 {/* --- Added icon next to title --- */}
                 <div className="flex items-start gap-3 mb-2">
@@ -237,7 +165,6 @@ export default function Startups() {
       {/* Apply Button */}
       <div className="flex justify-center mt-20">
         <a href="/getinvolved">
-          {/* --- Replaced with consistent themed button --- */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
