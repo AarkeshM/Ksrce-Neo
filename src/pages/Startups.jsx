@@ -70,6 +70,7 @@ const currentStartups = [
     img: inzovate,
     icon: <FaDatabase className="text-amber-500" />,
   },
+  
 ];
 
 const fadeInUp = {

@@ -76,7 +76,7 @@ const Header = () => {
     { name: "About us" }, // Dropdown
     { name: "Programs" }, // New Dropdown
     { name: "StartUps" }, // New Dropdown
-    { name: "Innovation club", path: "/innovationclub" }, // Single Link
+    { name: "Innovation club", path: "/neospark" }, // Single Link
     { name: "Contact us", path: "/contact" },
   ];
 
@@ -89,8 +89,8 @@ const Header = () => {
   ];
   
   const programsSubmenu = [
-    { name: "Pre Incubation", path: "/programs/preincubation" },
-    { name: "Incubation", path: "/programs/incubation" },
+    { name: "Pre Incubation", path: "/preincubation" },
+    { name: "Incubation", path: "/incubation" },
     { name: "Events", path: "/programs" },
   ];
   

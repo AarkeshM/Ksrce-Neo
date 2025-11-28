@@ -13,6 +13,9 @@ import FooterTicker from "./pages/FooterTicker";
 import Contact from "./pages/Contactus";
 import OurTeam from "./pages/OurTeam";
 import SucessStories from "./pages/SuccessStories";
+import PreIncubation from "./pages/PreIncubation";
+import Incubation from "./pages/Incubation";
+import NeoSpark from "./pages/Innovationclub.jsx";
 
 const App = () => {
   return (
@@ -33,6 +36,9 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/ourteam" element={<OurTeam />} />
             <Route path="/successstories" element={<SucessStories />} />  
+            <Route path="/preincubation" element={<PreIncubation />} />
+            <Route path="/incubation" element={<Incubation />} />
+            <Route path="/neospark" element={<NeoSpark />} />
           </Routes>
         </main>
         <FooterTicker />
