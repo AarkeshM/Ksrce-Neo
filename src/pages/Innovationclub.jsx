@@ -291,7 +291,7 @@ const NeoSpark = () => {
             </p>
             
             <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 mb-12">
-               {["Discover Strengths", "Explore Tech", "Build Confidence", "Network w/ Mentors"].map((benefit, i) => (
+               {["Discover Strengths", "Explore Tech", "Build Confidence", "Network / Mentors"].map((benefit, i) => (
                  <div key={i} className="bg-white p-4 rounded-xl shadow-sm font-bold text-slate-700 border border-slate-100 hover:border-amber-200 hover:shadow-md transition-all">
                    {benefit}
                  </div>

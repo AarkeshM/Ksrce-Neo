@@ -187,9 +187,9 @@ const PreIncubation = () => {
                 Applications are open for the upcoming cohort. Don't miss the chance to build your future.
               </p>
               
-              <button className="w-full py-4 bg-white text-teal-900 font-bold rounded-xl hover:bg-amber-50 transition-colors flex items-center justify-center gap-2 group">
+              <a href= "https://forms.gle/miZPmmZxsLgjoHrJ7" className="w-full py-4 bg-white text-teal-900 font-bold rounded-xl hover:bg-amber-50 transition-colors flex items-center justify-center gap-2 group">
                 Start Application <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </motion.div>
 
@@ -199,7 +199,7 @@ const PreIncubation = () => {
       {/* --- FOOTER CTA --- */}
       <section className="py-16 text-center px-4">
         <h2 className="text-2xl font-bold text-slate-800 mb-2">Have questions?</h2>
-        <p className="text-slate-500 mb-6">Contact the NEO E-Club coordinator for more details.</p>
+        <p className="text-slate-500 mb-6">Contact the NEO Spark Team for more details.</p>
         <a href="mailto:neo@ksrce.ac.in" className="text-teal-600 font-semibold hover:text-teal-800 underline decoration-2 underline-offset-4">
           neo@ksrce.ac.in
         </a>

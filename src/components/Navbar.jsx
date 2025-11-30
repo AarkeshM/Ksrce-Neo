@@ -85,7 +85,7 @@ const Header = () => {
     { name: "Our Team", path: "/ourteam" },
     { name: "Facilities", path: "/facilities" },
     { name: "Sectors", path: "/domain" },
-    { name: "Our Partners", path: "/partners" },
+    { name: "Our Partners", path: "/partnership" },
   ];
   
   const programsSubmenu = [

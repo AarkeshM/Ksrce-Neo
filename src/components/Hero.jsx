@@ -145,11 +145,8 @@ const Hero = () => {
           </h2>
 
           <p className="mt-4 sm:text-lg md:text-xl text-slate-700 max-w-3xl mx-auto">
-            KSRCE NEO is the registered incubation centre as section 8 company of
-            K.S.R. College of Engineering, Tamil Nadu. We foster innovation,
-            entrepreneurship, and startup growth by empowering students,
-            faculty, and aspiring entrepreneurs to transform their ideas into
-            impactful ventures.
+            KSRCE Council for Innovation and Incubation, a Section 8 Company affiliated to K.S.R. College of Engineering and supported by StartupTN,
+            is dedicated to nurturing innovation, driving entrepreneurship, and enabling sustainable startup growth.
           </p>
 
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-blue-900 leading-tight drop-shadow-sm mt-8 mb-8">

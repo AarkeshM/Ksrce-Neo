@@ -212,9 +212,9 @@ const Incubation = () => {
                 </p>
               </div>
               
-              <button className="w-full mt-8 py-4 bg-white text-teal-900 font-bold rounded-xl hover:bg-amber-50 transition-colors flex items-center justify-center gap-2 group">
+              <a href= "https://forms.gle/xtUJMPLvaVZLBZ3o9" className="w-full mt-8 py-4 bg-white text-teal-900 font-bold rounded-xl hover:bg-amber-50 transition-colors flex items-center justify-center gap-2 group">
                 Apply Now <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-              </button>
+              </a>
             </div>
           </motion.div>
 

@@ -16,6 +16,7 @@ import SucessStories from "./pages/SuccessStories";
 import PreIncubation from "./pages/PreIncubation";
 import Incubation from "./pages/Incubation";
 import NeoSpark from "./pages/Innovationclub.jsx";
+import Partnership from "./pages/Partnership";
 
 const App = () => {
   return (
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/preincubation" element={<PreIncubation />} />
             <Route path="/incubation" element={<Incubation />} />
             <Route path="/neospark" element={<NeoSpark />} />
+            <Route path="/partnership" element={<Partnership />} />
           </Routes>
         </main>
         <FooterTicker />
