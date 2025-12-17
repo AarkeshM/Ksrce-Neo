@@ -82,7 +82,7 @@ const Incubation = () => {
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
       
       {/* --- HERO SECTION --- */}
-      <section className="relative bg-teal-900 text-white pt-24 pb-28 px-4 overflow-hidden">
+       <section className="relative bg-gradient-to-r from-blue-950 to-blue-700 text-white pt-20 pb-16 px-4 overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
             <div className="absolute top-[-10%] right-[-5%] w-96 h-96 bg-amber-500/20 rounded-full blur-3xl"></div>

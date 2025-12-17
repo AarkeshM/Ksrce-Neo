@@ -1,23 +1,23 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-  Lightbulb, 
-  Users, 
-  Share2, 
-  Layers, 
-  Briefcase, 
-  CheckCircle2, 
-  Rocket, 
-  ArrowRight 
+import {
+  Lightbulb,
+  Users,
+  Share2,
+  Layers,
+  Briefcase,
+  CheckCircle2,
+  Rocket,
+  ArrowRight
 } from "lucide-react";
 
 // --- Animation Config ---
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: "easeOut" } 
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: "easeOut" }
   }
 };
 
@@ -67,10 +67,7 @@ const eligibility = [
 const PreIncubation = () => {
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-800">
-      
-      {/* --- HERO SECTION --- */}
-      <section className="relative bg-teal-900 text-white pt-20 pb-24 px-4 overflow-hidden">
-        {/* Background Elements */}
+      <section className="relative bg-gradient-to-r from-blue-950 to-blue-700 text-white pt-20 pb-10 px-4 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-teal-600 rounded-full blur-3xl opacity-20 -mr-20 -mt-20"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-amber-500 rounded-full blur-3xl opacity-20 -ml-10 -mb-10"></div>
 
@@ -83,11 +80,11 @@ const PreIncubation = () => {
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/50 text-amber-300 font-bold text-sm uppercase tracking-wider mt-3 mb-6">
               <Rocket className="w-4 h-4" /> KSRCE NEO
             </div>
-            
+
             <h1 className="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">
               Pre-Incubation Program
             </h1>
-            
+
             <p className="text-xl md:text-2xl font-light text-teal-100 max-w-3xl mx-auto mb-8">
               Exclusively for <span className="font-semibold text-white">Student-Led Ventures</span>
             </p>
@@ -101,7 +98,7 @@ const PreIncubation = () => {
 
       {/* --- WHAT WE OFFER SECTION --- */}
       <section className="py-20 px-4 max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
@@ -115,7 +112,7 @@ const PreIncubation = () => {
           </p>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={staggerContainer}
           initial="hidden"
@@ -123,7 +120,7 @@ const PreIncubation = () => {
           viewport={{ once: true, amount: 0.1 }}
         >
           {offerings.map((offer, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               variants={fadeInUp}
               className="bg-white p-8 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 group"
@@ -143,9 +140,9 @@ const PreIncubation = () => {
       {/* --- ELIGIBILITY SECTION --- */}
       <section className="bg-slate-900 text-white py-20 px-4">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-12">
-          
+
           {/* Left: Text */}
-          <motion.div 
+          <motion.div
             className="w-full md:w-1/2"
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -158,7 +155,7 @@ const PreIncubation = () => {
             <p className="text-slate-300 mb-8 text-lg">
               We are looking for passionate problem solvers ready to commit to their entrepreneurial journey.
             </p>
-            
+
             <ul className="space-y-6">
               {eligibility.map((item, index) => (
                 <li key={index} className="flex items-start gap-4">
@@ -172,7 +169,7 @@ const PreIncubation = () => {
           </motion.div>
 
           {/* Right: Visual Card */}
-          <motion.div 
+          <motion.div
             className="w-full md:w-1/2"
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -181,13 +178,13 @@ const PreIncubation = () => {
           >
             <div className="bg-gradient-to-br from-teal-600 to-teal-800 p-8 md:p-12 rounded-[2rem] shadow-2xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-white opacity-10 rounded-full blur-2xl -mr-10 -mt-10"></div>
-              
+
               <h3 className="text-2xl font-bold mb-4">Ready to start?</h3>
               <p className="text-teal-100 mb-8">
                 Applications are open for the upcoming cohort. Don't miss the chance to build your future.
               </p>
-              
-              <a href= "https://forms.gle/miZPmmZxsLgjoHrJ7" className="w-full py-4 bg-white text-teal-900 font-bold rounded-xl hover:bg-amber-50 transition-colors flex items-center justify-center gap-2 group">
+
+              <a href="https://forms.gle/miZPmmZxsLgjoHrJ7" className="w-full py-4 bg-white text-teal-900 font-bold rounded-xl hover:bg-amber-50 transition-colors flex items-center justify-center gap-2 group">
                 Start Application <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </div>
