@@ -166,11 +166,8 @@ const AboutUs = () => {
             {/* Right Side */}
             <div className="w-full lg:w-2/3 p-8 md:p-12 flex items-center">
               <p className="text-base md:text-lg lg:text-xl font-light leading-relaxed text-teal-100 text-center lg:text-left">
-                To become a leading hub for technological innovation and
-                entrepreneurship that contributes to regional development, and
-                national and international progress. The aim of the E-Club is to
-                ignite the entrepreneurial spirit and interests in the students
-                while providing assistance to members in building their startup.
+                To become a leading campus-based innovation and incubation hub that inspires and empowers students and faculty of 
+                KSR College of Engineering to build technology-driven, scalable, and socially relevant ventures.
               </p>
             </div>
           </div>
@@ -213,15 +210,23 @@ const AboutUs = () => {
                 >
                   <motion.li variants={staggerItem} className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-amber-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
-                    <span>Support early-stage startups with mentoring, technical guidance, and funding.</span>
+                    <span>To foster a strong culture of innovation and entrepreneurship across all departments of KSRCE.</span>
                   </motion.li>
                   <motion.li variants={staggerItem} className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-amber-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
-                    <span>Build industry-academia linkages and foster entrepreneurial thinking.</span>
+                    <span>To enable idea-to-venture journeys through structured pre-incubation, incubation, and mentorship programs.</span>
                   </motion.li>
                   <motion.li variants={staggerItem} className="flex items-start">
                     <span className="inline-block w-2 h-2 bg-amber-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
-                    <span>Enable inclusive development by supporting socially relevant innovations.</span>
+                    <span>To promote cross-disciplinary collaboration and real-world problem solving.</span>
+                  </motion.li>
+                  <motion.li variants={staggerItem} className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-amber-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                    <span>To connect innovators with industry, government, investors, and the broader startup ecosystem.</span>
+                  </motion.li>
+                  <motion.li variants={staggerItem} className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-amber-500 rounded-full mt-2.5 mr-3 flex-shrink-0"></span>
+                    <span>To support the creation of sustainable startups that contribute to economic growth and societal impact.</span>
                   </motion.li>
                 </motion.ul>
               </div>

@@ -33,7 +33,7 @@ const partners = [
   {
     name: "Zoho for Startups",
     category: "Software Partner",
-    desc: "Providing cloud credits and enterprise-grade software suites to incubatees.",
+    desc: "KSRCE NEO is proud to partner with Zoho for Startups to empower ventures with world-class business tools and technology support.",
     image: zoho,
     icon: <Cloud className="w-5 h-5" />,
     color: "bg-yellow-50 text-yellow-600 border-yellow-100"
@@ -41,7 +41,7 @@ const partners = [
   {
     name: "Cumma",
     category: "Cloud Infrastructure",
-    desc: "Empowering our startups with server credits and technical mentorship.",
+    desc: "This collaboration enables KSRCE NEO to extend facility access, innovation resources, and ecosystem support through a seamless digital platform powered by CUMMA.",
     image: cumma,
     icon: <Globe className="w-5 h-5" />,
     color: "bg-orange-50 text-orange-600 border-orange-100"
@@ -49,14 +49,14 @@ const partners = [
   {
     name: "Ancrew",
     category: "Technical Partner",
-    desc: "Offering MATLAB and Simulink licenses for deep-tech and research-based ventures.",
+    desc: "KSRCE NEO is collaborating with Ancrew Globals to provide AWS credits and cloud support for our Incubated startups.",
     image: ancrew,
     icon: <Cpu className="w-5 h-5" />,
     color: "bg-red-50 text-red-600 border-red-100"
   },
    {
     name: "MyProBuddy",
-    category: "Technical Partner",
+    category: "Funding Partner",
     desc: "Strategic collaboration for skills development and industry-ready technical training.",
     image: myprobuddy,
     icon: <Cpu className="w-5 h-5" />,
