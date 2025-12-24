@@ -6,19 +6,15 @@ import {
     Building2, 
     Cpu, 
     Cloud, 
-    ArrowRight, 
     CheckCircle2 
 } from "lucide-react";
 
 import ancrew from "../photos/ancrew.jpeg";
-
 import startuptn from "../photos/startuptn.jpeg";
-
 import zoho from "../photos/zoho.jpg";
-
 import myprobuddy from "../photos/myprobuddy.jpeg";
-
 import cumma from "../photos/cumma.jpeg";
+import mathworks from "../photos/mathworks.jpeg";
 
 // --- Data ---
 const partners = [
@@ -40,7 +36,7 @@ const partners = [
   },
   {
     name: "Cumma",
-    category: "Cloud Infrastructure",
+    category: "Infrastructure",
     desc: "This collaboration enables KSRCE NEO to extend facility access, innovation resources, and ecosystem support through a seamless digital platform powered by CUMMA.",
     image: cumma,
     icon: <Globe className="w-5 h-5" />,
@@ -59,6 +55,14 @@ const partners = [
     category: "Funding Partner",
     desc: "Strategic collaboration for skills development and industry-ready technical training.",
     image: myprobuddy,
+    icon: <Cpu className="w-5 h-5" />,
+    color: "bg-indigo-50 text-indigo-600 border-indigo-100"
+  },
+   {
+    name: "MathWorks",
+    category: "Sofware Partner",
+    desc: "MathWorks for Startups, in collaboration with KSRCE NEO, provides incubated startups with free access to MATLAB® and Simulink® and expert technical support.",
+    image: mathworks,
     icon: <Cpu className="w-5 h-5" />,
     color: "bg-indigo-50 text-indigo-600 border-indigo-100"
   }
@@ -157,10 +161,6 @@ export default function Partners() {
                   <p className="text-sm text-slate-500 leading-relaxed flex-1">
                     {p.desc}
                   </p>
-
-                  <div className="mt-6 pt-4 border-t border-slate-100 flex items-center text-sm font-semibold text-slate-400 group-hover:text-indigo-600 transition-colors">
-                    Learn More <ArrowRight className="w-4 h-4 ml-2" />
-                  </div>
                 </div>
               </motion.div>
             ))}
