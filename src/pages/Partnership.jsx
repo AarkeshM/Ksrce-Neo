@@ -1,12 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { 
-    Handshake, 
-    Globe, 
-    Building2, 
-    Cpu, 
-    Cloud, 
-    CheckCircle2 
+import {
+  Handshake,
+  Globe,
+  Building2,
+  Cpu,
+  Cloud,
+  CheckCircle2
 } from "lucide-react";
 
 import ancrew from "../photos/ancrew.jpeg";
@@ -44,13 +44,13 @@ const partners = [
   },
   {
     name: "Ancrew",
-    category: "Technical Partner",
+    category: "Software Partner",
     desc: "KSRCE NEO is collaborating with Ancrew Globals to provide AWS credits and cloud support for our Incubated startups.",
     image: ancrew,
     icon: <Cpu className="w-5 h-5" />,
     color: "bg-red-50 text-red-600 border-red-100"
   },
-   {
+  {
     name: "MyProBuddy",
     category: "Funding Partner",
     desc: "Strategic collaboration for skills development and industry-ready technical training.",
@@ -58,7 +58,7 @@ const partners = [
     icon: <Cpu className="w-5 h-5" />,
     color: "bg-indigo-50 text-indigo-600 border-indigo-100"
   },
-   {
+  {
     name: "MathWorks",
     category: "Sofware Partner",
     desc: "MathWorks for Startups, in collaboration with KSRCE NEO, provides incubated startups with free access to MATLAB® and Simulink® and expert technical support.",
@@ -89,14 +89,14 @@ const staggerContainer = {
 export default function Partners() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
-      
+
       {/* --- HERO SECTION --- */}
       <section className="relative pt-32 pb-24 px-4 overflow-hidden bg-gradient-to-b from-slate-50 to-white">
         {/* Geometric Pattern */}
-        <div className="absolute inset-0 opacity-40" 
-             style={{ backgroundImage: 'radial-gradient(#cbd5e1 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
+        <div className="absolute inset-0 opacity-40"
+          style={{ backgroundImage: 'radial-gradient(#cbd5e1 1px, transparent 1px)', backgroundSize: '40px 40px' }}>
         </div>
-        
+
         <div className="max-w-5xl mx-auto relative z-10 text-center">
           <motion.div
             initial="hidden"
@@ -111,7 +111,7 @@ export default function Partners() {
             <h1 className="text-4xl md:text-6xl font-black text-slate-900 mb-6 tracking-tight">
               Our Ecosystem <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-orange-600">Partners</span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
               We collaborate with industry leaders, government bodies, and tech giants to provide our startups with world-class resources, funding, and mentorship.
             </p>
@@ -153,43 +153,48 @@ export default function Partners() {
                       {p.category}
                     </span>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
                     {p.name}
                   </h3>
-                  
+
                   <p className="text-sm text-slate-500 leading-relaxed flex-1">
                     {p.desc}
                   </p>
                 </div>
               </motion.div>
             ))}
-            
+
             {/* "Become a Partner" Card */}
             <motion.div
               variants={fadeInUp}
               className="group bg-slate-900 rounded-2xl p-8 flex flex-col justify-center items-center text-center shadow-2xl relative overflow-hidden"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-amber-500 rounded-full blur-[60px] opacity-20 -mr-10 -mt-10"></div>
-              
+
               <div className="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mb-6 backdrop-blur-md border border-white/20 group-hover:scale-110 transition-transform">
                 <Handshake className="w-8 h-8 text-amber-400" />
               </div>
-              
+
               <h3 className="text-2xl font-bold text-white mb-2">Join the Network</h3>
               <p className="text-slate-400 text-sm mb-8 leading-relaxed">
                 Partner with KSRCE NEO to access top talent and drive innovation.
               </p>
-              
-              <button className="w-full py-3 bg-amber-500 text-slate-900 font-bold rounded-xl hover:bg-amber-400 transition-colors flex items-center justify-center gap-2">
+
+              <a
+                href="https://forms.gle/VBgGqVhkqPetoWqu8"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full py-3 bg-amber-500 text-slate-900 font-bold rounded-xl hover:bg-amber-400 transition-colors flex items-center justify-center gap-2"
+              >
                 Partner With Us
-              </button>
+              </a>
             </motion.div>
 
           </div>
         </motion.div>
       </section>
-      
+
       {/* --- FOOTER CTA --- */}
       <section className="py-20 bg-slate-50 border-t border-slate-200">
         <div className="max-w-3xl mx-auto text-center px-4">
@@ -200,7 +205,7 @@ export default function Partners() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <a href="mailto:neo@ksrce.ac.in" className="flex items-center gap-2 text-slate-900 font-bold bg-white px-6 py-3 rounded-full border border-slate-200 shadow-sm hover:shadow-md transition-all hover:border-amber-500">
-               neo@ksrce.ac.in
+              neo@ksrce.ac.in
             </a>
             <span className="text-slate-300 hidden sm:block">|</span>
             <div className="flex items-center gap-2 text-slate-600">

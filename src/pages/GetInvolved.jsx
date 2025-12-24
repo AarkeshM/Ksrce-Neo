@@ -15,14 +15,14 @@ const involvementTypes = [
   {
     title: "For Student Innovators",
     desc: "Students can engage with KSRCE NEO through internships, project collaborations, workshops, and events — gaining hands-on experience, mentorship, and exposure to the startup ecosystem.",
-    link: "https://forms.gle/miZPmmZxsLgjoHrJ7",
+    link: "https://forms.gle/i2BKs1ntzjMjgDGk8",
     buttonText: "Explore Opportunities",
     icon: <FaUserGraduate />,
   },
   {
     title: "For Startups",
     desc: "KSRCE NEO is the perfect launchpad for ambitious startups. Get access to labs, mentorship, networking, and resources to accelerate your business growth.",
-    link: "https://forms.gle/xtUJMPLvaVZLBZ3o9",
+    link: "https://forms.gle/jGk9yAakCnLYX1Qc7",
     buttonText: "Apply as a Startup",
     icon: <FaRocket />,
   },

@@ -44,7 +44,7 @@ const Hero = () => {
   }, []);
 
   const highlights = [
-    { title: "Startup Onboarded", value: "12+", icon: <FaRocket size={30} /> },
+    { title: "Startup Onboarded", value: "14+", icon: <FaRocket size={30} /> },
     {
       title: "Student Innovators",
       value: "20+",
