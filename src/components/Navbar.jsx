@@ -76,6 +76,7 @@ const Header = () => {
     { name: "About us" }, // Dropdown
     { name: "Programs" }, // New Dropdown
     { name: "StartUps" }, // New Dropdown
+    { name: "NewsLetter", path: "/newsletter" },
     { name: "Innovation club", path: "/neospark" }, // Single Link
     { name: "Contact us", path: "/contact" },
   ];

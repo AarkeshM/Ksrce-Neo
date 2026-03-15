@@ -17,6 +17,7 @@ import PreIncubation from "./pages/PreIncubation";
 import Incubation from "./pages/Incubation";
 import NeoSpark from "./pages/Innovationclub.jsx";
 import Partnership from "./pages/Partnership";
+import MyNewsletter from "./pages/NewsLetter";
 
 const App = () => {
   return (
@@ -41,6 +42,7 @@ const App = () => {
             <Route path="/incubation" element={<Incubation />} />
             <Route path="/neospark" element={<NeoSpark />} />
             <Route path="/partnership" element={<Partnership />} />
+            <Route path="/newsletter" element={<MyNewsletter />} />
           </Routes>
         </main>
         <FooterTicker />
