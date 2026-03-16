@@ -95,21 +95,14 @@ const styles = {
   },
   title: {
     fontSize: '2.5rem',
-    margin: 0,
+    marginTop: '45px',
     letterSpacing: '3px',
     fontWeight: '800',
     background: 'linear-gradient(to right, #fff, #bdc3c7)',
     WebkitBackgroundClip: 'text',
     WebkitTextFillColor: 'transparent',
   },
-  edition: {
-    fontSize: '1rem',
-    background: '#e74c3c',
-    color: 'white',
-    padding: '2px 10px',
-    borderRadius: '20px',
-    verticalAlign: 'middle',
-  },
+  
   subtitle: {
     color: '#95a5a6',
     marginTop: '5px',
