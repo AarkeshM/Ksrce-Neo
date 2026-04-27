@@ -6,7 +6,7 @@ import { FaGraduationCap } from "react-icons/fa";
 // Ensure you have these paths correct in your project
 import DEAN_PHOTO from "../photos/venkatesan 1.jpg";
 import MURUGESAN_PHOTO from "../photos/murugesan.jpg";
-import HARSHINI_PHOTO from "../photos/harshini1.jpg";
+import SANKAR_PHOTO from "../photos/sankar.png";
 import PAVITHRAN_PHOTO from "../photos/pavithran.jpg";   
 import lakshmiPhoto from "../photos/lakshmi.jpg";
 
@@ -41,14 +41,14 @@ const teamMembers = [
     linkedin: "https://www.linkedin.com/in/murugesan-arumugam",
   },
   {
-    name: "J. Harshini",
-    role: "Incubation Manager, KSRCE NEO",
-    photo: HARSHINI_PHOTO,
-    linkedin: "https://www.linkedin.com/in/harshini-jayasankaran-74474813b",
+    name: "Sankar E",
+    role: "Incubation Head / Manager",
+    photo: SANKAR_PHOTO,
+    linkedin: "https://www.linkedin.com/in/sankarchozhan?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
   },
   {
     name: "Pavithran G",
-    role: "Incubation Associate, KSRCE NEO",
+    role: "Incubation Associate",
     photo: PAVITHRAN_PHOTO,
     linkedin: "https://www.linkedin.com/in/pavithran-g-a3a333231",
   },
